@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Common.Cache;
 
 namespace Presentacion
 {
@@ -16,6 +17,9 @@ namespace Presentacion
         public FrmPrincipal()
         {
             InitializeComponent();
+            hideSubMenu();
+            LoadUserData();
+            ManagePermissions();
         }
         #region Funcionalidades del formulario
         private int tolerance = 12;
@@ -95,21 +99,80 @@ namespace Presentacion
 
         #endregion
 
-        private void AbrirFormularios<miForm>()where miForm : Form, new()
+        private Form formularioActivo = null;
+        private void AbrirFormularios(Form formularioHijo)
         {
-            Form formulario;
-            formulario = panelFormularios.Controls.OfType<miForm>().FirstOrDefault();
-            if (formulario == null)
+            if (formularioActivo != null)
+                formularioActivo.Close();
+            formularioActivo = formularioHijo;
+            formularioHijo.TopLevel = false;
+            formularioHijo.FormBorderStyle = FormBorderStyle.None;
+            formularioHijo.Dock = DockStyle.Fill;
+            panelFormularios.Controls.Add(formularioHijo);
+            panelFormularios.Tag = formularioHijo;
+            formularioHijo.BringToFront();
+            formularioHijo.Show();
+        }
+
+        private void CloseForms(object sender, FormClosedEventArgs e)
+        {
+            if (Application.OpenForms["FrmPacientes"] == null)
+                btnPacientes.BackColor = Color.FromArgb(4,41,68);
+            if (Application.OpenForms["FrmEmpleados"] == null)
+                btnEmpleados.BackColor = Color.FromArgb(4, 41, 68);
+        }
+
+        private void btnPacientes_Click_1(object sender, EventArgs e)
+        {
+            showSubMenu(panelSubmenuPacientes);
+        }
+
+        private void btnEmpleados_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelSubmenuEmpleados);
+            //btnEmpleados.BackColor = Color.FromArgb(12, 61, 92);
+           
+        }
+
+        private void btnRegistrarPacientes_Click(object sender, EventArgs e)
+        {
+            AbrirFormularios(new FrmPacientes());
+            hideSubMenu();
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+        }
+
+        private void hideSubMenu()
+        {
+            panelSubmenuPacientes.Visible = false;
+            panelSubmenuEmpleados.Visible = false;
+        }
+        private void showSubMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
             {
-                formulario = new miForm();
-                formulario.TopLevel = false;
-                panelFormularios.Controls.Add(formulario);
-                formulario.Tag = formulario;
-                formulario.Show();
+                hideSubMenu();
+                subMenu.Visible = true;
             }
             else
+                subMenu.Visible = false;
+        }
+
+        private void LoadUserData()
+        {
+            labelRol.Text = UserLoginCache.Rol;
+            labelFirst.Text = UserLoginCache.FirstName + " " + UserLoginCache.LastName;
+            labelEmail.Text = UserLoginCache.Email;
+        }
+        private void ManagePermissions()
+        {
+            if (UserLoginCache.Rol == Roles.Paciente)
             {
-                formulario.BringToFront();
+                btnPacientes.Enabled = false;
+                btnEmpleados.Enabled = false;
             }
         }
     }

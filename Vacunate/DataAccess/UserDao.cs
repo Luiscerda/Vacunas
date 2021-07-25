@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Common.Cache;
 
 namespace DataAccess
 {
@@ -25,6 +26,14 @@ namespace DataAccess
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.HasRows)
                     {
+                        while (reader.Read())
+                        {
+                            UserLoginCache.IdUser = reader.GetInt32(0);
+                            UserLoginCache.FirstName = reader.GetString(3);
+                            UserLoginCache.LastName = reader.GetString(4);
+                            UserLoginCache.Email = reader.GetString(5);
+                            UserLoginCache.Rol = reader.GetString(6);
+                        }
                         return true;
                     }
                     else

@@ -8,6 +8,7 @@ using System.Text;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Domain;
 
 namespace Presentacion
 {
@@ -16,7 +17,7 @@ namespace Presentacion
         public FrmLogin()
         {
             InitializeComponent();
-            PersonalizarControls();
+            //PersonalizarControls();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -48,20 +49,96 @@ namespace Presentacion
         private void PersonalizarControls()
         {
             this.txtUserName.AutoSize = false;
-            this.txtUserName.Size = new Size(287,45);
+            this.txtUserName.Size = new Size(287,25);
 
             this.txtPassword.AutoSize = false;
-            this.txtPassword.Size = new Size(287, 45);
-            txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.Size = new Size(287, 25);
         }
 
         private void button1_Paint(object sender, PaintEventArgs e)
         {
             System.Drawing.Drawing2D.GraphicsPath buttonPath = new System.Drawing.Drawing2D.GraphicsPath();
-            Rectangle rectangle = button1.ClientRectangle;
+            Rectangle rectangle = btnLogin.ClientRectangle;
             rectangle.Inflate(0, 30);
             buttonPath.AddEllipse(rectangle);
-            button1.Region = new Region(buttonPath);
+            btnLogin.Region = new Region(buttonPath);
+        }
+
+        private void txtUserName_Enter(object sender, EventArgs e)
+        {
+            if (txtUserName.Text == "Usuario")
+            {
+                txtUserName.Text = "";
+                txtUserName.ForeColor = Color.RoyalBlue;
+            }
+        }
+
+        private void txtUserName_Leave(object sender, EventArgs e)
+        {
+            if (txtUserName.Text == "")
+            {
+                txtUserName.Text = "Usuario";
+                txtUserName.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "")
+            {
+                txtPassword.Text = "Contraseña";
+                txtPassword.ForeColor = Color.Black;
+                txtPassword.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "Contraseña")
+            {
+                txtPassword.Text = "";
+                txtPassword.ForeColor = Color.RoyalBlue;
+                txtPassword.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void MsgError(string mensaje)
+        {
+            labelErrorMessage.Text = mensaje;
+            labelErrorMessage.Visible = true;
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (txtUserName.Text != "Usuario")
+            {
+                if (txtPassword.Text != "Contraseña")
+                {
+                    UserModel userModel = new UserModel();
+                    var validLogin = userModel.Login(txtUserName.Text.Trim(),txtPassword.Text.Trim());
+                    if (validLogin)
+                    {
+                        FrmPrincipal principal = new FrmPrincipal();
+                        principal.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MsgError("Usuario o Contraseña incorrectos. \n Por favor intentelo nuevamente");
+                        txtPassword.Text = "Contraseña";
+                        txtPassword.UseSystemPasswordChar = false;
+                        txtUserName.Focus();
+                    }
+                }
+                else
+                {
+                    MsgError("Por favor digite su Contraseña");
+                }
+            }
+            else
+            {
+                MsgError("Por favor digite su Usuario");
+            }
         }
     }
 }
