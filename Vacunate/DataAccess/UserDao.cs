@@ -30,6 +30,7 @@ namespace DataAccess
                         while (reader.Read())
                         {
                             UserLoginCache.IdUser = reader.GetInt32(0);
+                            UserLoginCache.UserName = reader.GetString(1);
                             UserLoginCache.FirstName = reader.GetString(3);
                             UserLoginCache.LastName = reader.GetString(4);
                             UserLoginCache.Email = reader.GetString(5);
@@ -100,6 +101,40 @@ namespace DataAccess
                     command.Parameters.AddWithValue("@id", user.Id);
                     command.CommandType = CommandType.Text;
                     command.ExecuteNonQuery();
+                }
+            }
+        }
+        public List<User> GetUsers()
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                List<User> users = new List<User>();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "Select * from Users";
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            User user = new User();
+                            user.UserName = reader.GetString(1);
+                            user.Name = reader.GetString(3);
+                            user.LastName = reader.GetString(4);
+                            user.Rol = reader.GetString(6);
+                            user.Mail = reader.GetString(5);
+
+                            users.Add(user);
+                        }
+                        return users;
+                    }
+                    else
+                    {
+                        return users;
+                    }
                 }
             }
         }

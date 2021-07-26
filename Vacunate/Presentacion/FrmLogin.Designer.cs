@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.titleBar = new System.Windows.Forms.Panel();
+            this.btnMinimize = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -42,12 +44,10 @@
             this.labelErrorMessage = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnMinimize = new System.Windows.Forms.PictureBox();
-            this.btnClose = new System.Windows.Forms.PictureBox();
             this.titleBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // titleBar
@@ -61,6 +61,30 @@
             this.titleBar.Size = new System.Drawing.Size(337, 45);
             this.titleBar.TabIndex = 0;
             this.titleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.titleBar_MouseDown);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.Image = global::Presentacion.Properties.Resources.Minimize_Icon;
+            this.btnMinimize.Location = new System.Drawing.Point(281, 12);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(16, 16);
+            this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnMinimize.TabIndex = 2;
+            this.btnMinimize.TabStop = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Image = global::Presentacion.Properties.Resources.Close_Icon;
+            this.btnClose.Location = new System.Drawing.Point(303, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(16, 16);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnClose.TabIndex = 3;
+            this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panel1
             // 
@@ -205,30 +229,6 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // btnMinimize
-            // 
-            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.Image = global::Presentacion.Properties.Resources.Minimize_Icon;
-            this.btnMinimize.Location = new System.Drawing.Point(281, 12);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(16, 16);
-            this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.btnMinimize.TabIndex = 2;
-            this.btnMinimize.TabStop = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Image = global::Presentacion.Properties.Resources.Close_Icon;
-            this.btnClose.Location = new System.Drawing.Point(303, 12);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(16, 16);
-            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.btnClose.TabIndex = 3;
-            this.btnClose.TabStop = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,9 +253,9 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrmLogin_MouseDown);
             this.titleBar.ResumeLayout(false);
             this.titleBar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -34,38 +34,31 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnEmpleados = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.circularPictureBox1 = new Presentacion.Controles.CircularPictureBox();
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelFirst = new System.Windows.Forms.Label();
             this.labelRol = new System.Windows.Forms.Label();
-            this.panelSubmenuEmpleados = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.btnEmpleados = new System.Windows.Forms.Button();
-            this.panelSubmenuPacientes = new System.Windows.Forms.Panel();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.btnRegistrarPacientes = new System.Windows.Forms.Button();
             this.btnPacientes = new System.Windows.Forms.Button();
+            this.btnUsers = new System.Windows.Forms.Button();
             this.pictureLogo = new System.Windows.Forms.PictureBox();
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
             this.btnRestaurar = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.circularPictureBox1 = new Presentacion.Controles.CircularPictureBox();
             this.panelContenedor.SuspendLayout();
             this.panelFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMenu.SuspendLayout();
-            this.panelSubmenuEmpleados.SuspendLayout();
-            this.panelSubmenuPacientes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             this.panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelContenedor
@@ -117,21 +110,64 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.btnEmpleados);
             this.panelMenu.Controls.Add(this.linkLabel1);
             this.panelMenu.Controls.Add(this.circularPictureBox1);
             this.panelMenu.Controls.Add(this.labelEmail);
             this.panelMenu.Controls.Add(this.labelFirst);
             this.panelMenu.Controls.Add(this.labelRol);
-            this.panelMenu.Controls.Add(this.panelSubmenuEmpleados);
-            this.panelMenu.Controls.Add(this.btnEmpleados);
-            this.panelMenu.Controls.Add(this.panelSubmenuPacientes);
             this.panelMenu.Controls.Add(this.btnPacientes);
+            this.panelMenu.Controls.Add(this.btnUsers);
             this.panelMenu.Controls.Add(this.pictureLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 40);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(250, 600);
             this.panelMenu.TabIndex = 1;
+            // 
+            // btnEmpleados
+            // 
+            this.btnEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEmpleados.FlatAppearance.BorderSize = 0;
+            this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmpleados.ForeColor = System.Drawing.Color.Silver;
+            this.btnEmpleados.Location = new System.Drawing.Point(0, 233);
+            this.btnEmpleados.Name = "btnEmpleados";
+            this.btnEmpleados.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnEmpleados.Size = new System.Drawing.Size(250, 45);
+            this.btnEmpleados.TabIndex = 5;
+            this.btnEmpleados.Text = "Empleados";
+            this.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmpleados.UseVisualStyleBackColor = true;
+            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
+            this.linkLabel1.Location = new System.Drawing.Point(16, 122);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(60, 13);
+            this.linkLabel1.TabIndex = 2;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Editar Perfil";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // circularPictureBox1
+            // 
+            this.circularPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
+            this.circularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.circularPictureBox1.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.circularPictureBox1.BorderColor2 = System.Drawing.SystemColors.ButtonShadow;
+            this.circularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.circularPictureBox1.BorderSize = 1;
+            this.circularPictureBox1.GradientAngle = 50F;
+            this.circularPictureBox1.Location = new System.Drawing.Point(4, 27);
+            this.circularPictureBox1.Name = "circularPictureBox1";
+            this.circularPictureBox1.Size = new System.Drawing.Size(88, 88);
+            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.circularPictureBox1.TabIndex = 2;
+            this.circularPictureBox1.TabStop = false;
             // 
             // labelEmail
             // 
@@ -166,124 +202,38 @@
             this.labelRol.TabIndex = 2;
             this.labelRol.Text = "Rol";
             // 
-            // panelSubmenuEmpleados
-            // 
-            this.panelSubmenuEmpleados.Controls.Add(this.button4);
-            this.panelSubmenuEmpleados.Controls.Add(this.button5);
-            this.panelSubmenuEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubmenuEmpleados.Location = new System.Drawing.Point(0, 326);
-            this.panelSubmenuEmpleados.Name = "panelSubmenuEmpleados";
-            this.panelSubmenuEmpleados.Size = new System.Drawing.Size(250, 93);
-            this.panelSubmenuEmpleados.TabIndex = 2;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.Silver;
-            this.button4.Location = new System.Drawing.Point(0, 45);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(250, 45);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "button4";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.Silver;
-            this.button5.Location = new System.Drawing.Point(0, 0);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(250, 45);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "button5";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // btnEmpleados
-            // 
-            this.btnEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEmpleados.FlatAppearance.BorderSize = 0;
-            this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmpleados.ForeColor = System.Drawing.Color.Silver;
-            this.btnEmpleados.Location = new System.Drawing.Point(0, 281);
-            this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnEmpleados.Size = new System.Drawing.Size(250, 45);
-            this.btnEmpleados.TabIndex = 1;
-            this.btnEmpleados.Text = "Empleados";
-            this.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpleados.UseVisualStyleBackColor = true;
-            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
-            // 
-            // panelSubmenuPacientes
-            // 
-            this.panelSubmenuPacientes.Controls.Add(this.btnConsultar);
-            this.panelSubmenuPacientes.Controls.Add(this.btnRegistrarPacientes);
-            this.panelSubmenuPacientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubmenuPacientes.Location = new System.Drawing.Point(0, 188);
-            this.panelSubmenuPacientes.Name = "panelSubmenuPacientes";
-            this.panelSubmenuPacientes.Size = new System.Drawing.Size(250, 93);
-            this.panelSubmenuPacientes.TabIndex = 0;
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
-            this.btnConsultar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnConsultar.FlatAppearance.BorderSize = 0;
-            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar.ForeColor = System.Drawing.Color.Silver;
-            this.btnConsultar.Location = new System.Drawing.Point(0, 45);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnConsultar.Size = new System.Drawing.Size(250, 45);
-            this.btnConsultar.TabIndex = 2;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultar.UseVisualStyleBackColor = false;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
-            // 
-            // btnRegistrarPacientes
-            // 
-            this.btnRegistrarPacientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
-            this.btnRegistrarPacientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRegistrarPacientes.FlatAppearance.BorderSize = 0;
-            this.btnRegistrarPacientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarPacientes.ForeColor = System.Drawing.Color.Silver;
-            this.btnRegistrarPacientes.Location = new System.Drawing.Point(0, 0);
-            this.btnRegistrarPacientes.Name = "btnRegistrarPacientes";
-            this.btnRegistrarPacientes.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnRegistrarPacientes.Size = new System.Drawing.Size(250, 45);
-            this.btnRegistrarPacientes.TabIndex = 1;
-            this.btnRegistrarPacientes.Text = "Registrar";
-            this.btnRegistrarPacientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistrarPacientes.UseVisualStyleBackColor = false;
-            this.btnRegistrarPacientes.Click += new System.EventHandler(this.btnRegistrarPacientes_Click);
-            // 
             // btnPacientes
             // 
             this.btnPacientes.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPacientes.FlatAppearance.BorderSize = 0;
             this.btnPacientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPacientes.ForeColor = System.Drawing.Color.Silver;
-            this.btnPacientes.Location = new System.Drawing.Point(0, 143);
+            this.btnPacientes.Location = new System.Drawing.Point(0, 188);
             this.btnPacientes.Name = "btnPacientes";
             this.btnPacientes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnPacientes.Size = new System.Drawing.Size(250, 45);
-            this.btnPacientes.TabIndex = 0;
+            this.btnPacientes.TabIndex = 1;
             this.btnPacientes.Text = "Pacientes";
             this.btnPacientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPacientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPacientes.UseVisualStyleBackColor = true;
-            this.btnPacientes.Click += new System.EventHandler(this.btnPacientes_Click_1);
+            this.btnPacientes.Click += new System.EventHandler(this.btnPacientes_Click);
+            // 
+            // btnUsers
+            // 
+            this.btnUsers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUsers.FlatAppearance.BorderSize = 0;
+            this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsers.ForeColor = System.Drawing.Color.Silver;
+            this.btnUsers.Location = new System.Drawing.Point(0, 143);
+            this.btnUsers.Name = "btnUsers";
+            this.btnUsers.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnUsers.Size = new System.Drawing.Size(250, 45);
+            this.btnUsers.TabIndex = 0;
+            this.btnUsers.Text = "Usuarios";
+            this.btnUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUsers.UseVisualStyleBackColor = true;
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
             // pictureLogo
             // 
@@ -362,34 +312,6 @@
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
-            this.linkLabel1.Location = new System.Drawing.Point(16, 122);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(60, 13);
-            this.linkLabel1.TabIndex = 2;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Editar Perfil";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // circularPictureBox1
-            // 
-            this.circularPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
-            this.circularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.circularPictureBox1.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-            this.circularPictureBox1.BorderColor2 = System.Drawing.SystemColors.ButtonShadow;
-            this.circularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.circularPictureBox1.BorderSize = 1;
-            this.circularPictureBox1.GradientAngle = 50F;
-            this.circularPictureBox1.Location = new System.Drawing.Point(4, 27);
-            this.circularPictureBox1.Name = "circularPictureBox1";
-            this.circularPictureBox1.Size = new System.Drawing.Size(88, 88);
-            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.circularPictureBox1.TabIndex = 2;
-            this.circularPictureBox1.TabStop = false;
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,15 +329,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
-            this.panelSubmenuEmpleados.ResumeLayout(false);
-            this.panelSubmenuPacientes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).EndInit();
             this.panelBarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -430,15 +350,9 @@
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.PictureBox btnRestaurar;
         private System.Windows.Forms.PictureBox btnMinimizar;
-        private System.Windows.Forms.Panel panelSubmenuPacientes;
-        private System.Windows.Forms.Button btnConsultar;
-        private System.Windows.Forms.Button btnRegistrarPacientes;
-        private System.Windows.Forms.Button btnPacientes;
+        private System.Windows.Forms.Button btnUsers;
         private System.Windows.Forms.PictureBox pictureLogo;
-        private System.Windows.Forms.Panel panelSubmenuEmpleados;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button btnEmpleados;
+        private System.Windows.Forms.Button btnPacientes;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelEmail;
@@ -446,5 +360,6 @@
         private System.Windows.Forms.Label labelRol;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private Controles.CircularPictureBox circularPictureBox1;
+        private System.Windows.Forms.Button btnEmpleados;
     }
 }

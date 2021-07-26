@@ -14,5 +14,6 @@ namespace Common
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Mail { get; set; }
+        public string Rol { get; set; }
     }
 }

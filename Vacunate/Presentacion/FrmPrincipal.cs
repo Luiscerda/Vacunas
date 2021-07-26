@@ -117,21 +117,9 @@ namespace Presentacion
         private void CloseForms(object sender, FormClosedEventArgs e)
         {
             if (Application.OpenForms["FrmPacientes"] == null)
-                btnPacientes.BackColor = Color.FromArgb(4,41,68);
+                btnUsers.BackColor = Color.FromArgb(4,41,68);
             if (Application.OpenForms["FrmEmpleados"] == null)
-                btnEmpleados.BackColor = Color.FromArgb(4, 41, 68);
-        }
-
-        private void btnPacientes_Click_1(object sender, EventArgs e)
-        {
-            showSubMenu(panelSubmenuPacientes);
-        }
-
-        private void btnEmpleados_Click(object sender, EventArgs e)
-        {
-            showSubMenu(panelSubmenuEmpleados);
-            //btnEmpleados.BackColor = Color.FromArgb(12, 61, 92);
-           
+                btnPacientes.BackColor = Color.FromArgb(4, 41, 68);
         }
 
         private void btnRegistrarPacientes_Click(object sender, EventArgs e)
@@ -147,8 +135,8 @@ namespace Presentacion
 
         private void hideSubMenu()
         {
-            panelSubmenuPacientes.Visible = false;
-            panelSubmenuEmpleados.Visible = false;
+            //panelSubmenuPacientes.Visible = false;
+            //panelSubmenuEmpleados.Visible = false;
         }
         private void showSubMenu(Panel subMenu)
         {
@@ -160,10 +148,25 @@ namespace Presentacion
             else
                 subMenu.Visible = false;
         }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             AbrirFormularios(new FrmEditarPerfil());
+        }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            AbrirFormularios(new FrmUsuarios());
+            //showSubMenu(panelSubmenuEmpleados);
+        }
+
+        private void btnPacientes_Click(object sender, EventArgs e)
+        {
+            AbrirFormularios(new FrmPacientes());
+        }
+
+        private void btnEmpleados_Click(object sender, EventArgs e)
+        {
+            AbrirFormularios(new FrmEmpleados());
         }
 
         private void LoadUserData()
@@ -176,8 +179,8 @@ namespace Presentacion
         {
             if (UserLoginCache.Rol == Roles.Paciente)
             {
+                btnUsers.Enabled = false;
                 btnPacientes.Enabled = false;
-                btnEmpleados.Enabled = false;
             }
         }
     }

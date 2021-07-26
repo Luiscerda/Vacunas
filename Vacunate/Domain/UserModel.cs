@@ -21,6 +21,19 @@ namespace Domain
             return userDao.RecoveryPassword(userRequesting);
         }
 
+        public List<User> GetUsers()
+        {
+            try
+            {
+                return userDao.GetUsers();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public string EditProfile(User user)
         {          
             try

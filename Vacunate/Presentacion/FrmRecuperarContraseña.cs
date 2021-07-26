@@ -44,7 +44,6 @@ namespace Presentacion
             labelResultado.Text = mensaje;
             labelResultado.Visible = true;
         }
-
         private void btnRecuperar_Click(object sender, EventArgs e)
         {
             if (txtUserName.Text.Trim() != "Usuario o Correo")
