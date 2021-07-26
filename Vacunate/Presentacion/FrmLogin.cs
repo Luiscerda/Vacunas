@@ -118,9 +118,12 @@ namespace Presentacion
                     var validLogin = userModel.Login(txtUserName.Text.Trim(),txtPassword.Text.Trim());
                     if (validLogin)
                     {
+                        this.Hide();
+                        FrmBienvenida bienvenida = new FrmBienvenida();
+                        bienvenida.ShowDialog();
                         FrmPrincipal principal = new FrmPrincipal();
                         principal.Show();
-                        this.Hide();
+                       
                     }
                     else
                     {
@@ -139,6 +142,12 @@ namespace Presentacion
             {
                 MsgError("Por favor digite su Usuario");
             }
+        }
+
+        private void linkLabelRecuperarContraseña_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var recoveryPassword = new FrmRecuperarContraseña();
+            recoveryPassword.ShowDialog();
         }
     }
 }

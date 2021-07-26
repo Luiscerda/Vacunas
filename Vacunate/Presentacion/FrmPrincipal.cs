@@ -161,6 +161,11 @@ namespace Presentacion
                 subMenu.Visible = false;
         }
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AbrirFormularios(new FrmEditarPerfil());
+        }
+
         private void LoadUserData()
         {
             labelRol.Text = UserLoginCache.Rol;

@@ -34,6 +34,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.labelEmail = new System.Windows.Forms.Label();
+            this.labelFirst = new System.Windows.Forms.Label();
+            this.labelRol = new System.Windows.Forms.Label();
             this.panelSubmenuEmpleados = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -48,10 +51,8 @@
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.labelRol = new System.Windows.Forms.Label();
-            this.labelFirst = new System.Windows.Forms.Label();
-            this.labelEmail = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.circularPictureBox1 = new Presentacion.Controles.CircularPictureBox();
             this.panelContenedor.SuspendLayout();
             this.panelFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,7 +65,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelContenedor
@@ -116,10 +117,11 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.linkLabel1);
+            this.panelMenu.Controls.Add(this.circularPictureBox1);
             this.panelMenu.Controls.Add(this.labelEmail);
             this.panelMenu.Controls.Add(this.labelFirst);
             this.panelMenu.Controls.Add(this.labelRol);
-            this.panelMenu.Controls.Add(this.pictureBox2);
             this.panelMenu.Controls.Add(this.panelSubmenuEmpleados);
             this.panelMenu.Controls.Add(this.btnEmpleados);
             this.panelMenu.Controls.Add(this.panelSubmenuPacientes);
@@ -130,6 +132,39 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(250, 600);
             this.panelMenu.TabIndex = 1;
+            // 
+            // labelEmail
+            // 
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
+            this.labelEmail.ForeColor = System.Drawing.Color.Silver;
+            this.labelEmail.Location = new System.Drawing.Point(95, 98);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(32, 13);
+            this.labelEmail.TabIndex = 4;
+            this.labelEmail.Text = "Email";
+            // 
+            // labelFirst
+            // 
+            this.labelFirst.AutoSize = true;
+            this.labelFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
+            this.labelFirst.ForeColor = System.Drawing.Color.Silver;
+            this.labelFirst.Location = new System.Drawing.Point(95, 73);
+            this.labelFirst.Name = "labelFirst";
+            this.labelFirst.Size = new System.Drawing.Size(26, 13);
+            this.labelFirst.TabIndex = 3;
+            this.labelFirst.Text = "First";
+            // 
+            // labelRol
+            // 
+            this.labelRol.AutoSize = true;
+            this.labelRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
+            this.labelRol.ForeColor = System.Drawing.Color.Silver;
+            this.labelRol.Location = new System.Drawing.Point(95, 48);
+            this.labelRol.Name = "labelRol";
+            this.labelRol.Size = new System.Drawing.Size(23, 13);
+            this.labelRol.TabIndex = 2;
+            this.labelRol.Text = "Rol";
             // 
             // panelSubmenuEmpleados
             // 
@@ -327,49 +362,33 @@
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // pictureBox2
+            // linkLabel1
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 36);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(77, 78);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
+            this.linkLabel1.Location = new System.Drawing.Point(16, 122);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(60, 13);
+            this.linkLabel1.TabIndex = 2;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Editar Perfil";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // labelRol
+            // circularPictureBox1
             // 
-            this.labelRol.AutoSize = true;
-            this.labelRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
-            this.labelRol.ForeColor = System.Drawing.Color.Silver;
-            this.labelRol.Location = new System.Drawing.Point(95, 48);
-            this.labelRol.Name = "labelRol";
-            this.labelRol.Size = new System.Drawing.Size(23, 13);
-            this.labelRol.TabIndex = 2;
-            this.labelRol.Text = "Rol";
-            // 
-            // labelFirst
-            // 
-            this.labelFirst.AutoSize = true;
-            this.labelFirst.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
-            this.labelFirst.ForeColor = System.Drawing.Color.Silver;
-            this.labelFirst.Location = new System.Drawing.Point(95, 73);
-            this.labelFirst.Name = "labelFirst";
-            this.labelFirst.Size = new System.Drawing.Size(26, 13);
-            this.labelFirst.TabIndex = 3;
-            this.labelFirst.Text = "First";
-            // 
-            // labelEmail
-            // 
-            this.labelEmail.AutoSize = true;
-            this.labelEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
-            this.labelEmail.ForeColor = System.Drawing.Color.Silver;
-            this.labelEmail.Location = new System.Drawing.Point(95, 98);
-            this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(32, 13);
-            this.labelEmail.TabIndex = 4;
-            this.labelEmail.Text = "Email";
+            this.circularPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
+            this.circularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.circularPictureBox1.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.circularPictureBox1.BorderColor2 = System.Drawing.SystemColors.ButtonShadow;
+            this.circularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.circularPictureBox1.BorderSize = 1;
+            this.circularPictureBox1.GradientAngle = 50F;
+            this.circularPictureBox1.Location = new System.Drawing.Point(4, 27);
+            this.circularPictureBox1.Name = "circularPictureBox1";
+            this.circularPictureBox1.Size = new System.Drawing.Size(88, 88);
+            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.circularPictureBox1.TabIndex = 2;
+            this.circularPictureBox1.TabStop = false;
             // 
             // FrmPrincipal
             // 
@@ -396,7 +415,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -422,9 +441,10 @@
         private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.Label labelFirst;
         private System.Windows.Forms.Label labelRol;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private Controles.CircularPictureBox circularPictureBox1;
     }
 }
