@@ -11,5 +11,6 @@ namespace Common.Cache
         public const string Administrator = "Administrator";
         public const string Paciente = "Paciente";
         public const string Funcionario = "Funcionario";
+        public const int Cantidad = 3;
     }
 }

@@ -36,7 +36,6 @@
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.circularPictureBox1 = new Presentacion.Controles.CircularPictureBox();
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelFirst = new System.Windows.Forms.Label();
             this.labelRol = new System.Windows.Forms.Label();
@@ -48,17 +47,18 @@
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.circularPictureBox1 = new Presentacion.Controles.CircularPictureBox();
             this.panelContenedor.SuspendLayout();
             this.panelFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             this.panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelContenedor
@@ -152,22 +152,6 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Editar Perfil";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // circularPictureBox1
-            // 
-            this.circularPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
-            this.circularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.circularPictureBox1.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-            this.circularPictureBox1.BorderColor2 = System.Drawing.SystemColors.ButtonShadow;
-            this.circularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.circularPictureBox1.BorderSize = 1;
-            this.circularPictureBox1.GradientAngle = 50F;
-            this.circularPictureBox1.Location = new System.Drawing.Point(4, 27);
-            this.circularPictureBox1.Name = "circularPictureBox1";
-            this.circularPictureBox1.Size = new System.Drawing.Size(88, 88);
-            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.circularPictureBox1.TabIndex = 2;
-            this.circularPictureBox1.TabStop = false;
             // 
             // labelEmail
             // 
@@ -312,6 +296,22 @@
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // circularPictureBox1
+            // 
+            this.circularPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
+            this.circularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.circularPictureBox1.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.circularPictureBox1.BorderColor2 = System.Drawing.SystemColors.ButtonShadow;
+            this.circularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.circularPictureBox1.BorderSize = 1;
+            this.circularPictureBox1.GradientAngle = 50F;
+            this.circularPictureBox1.Location = new System.Drawing.Point(4, 27);
+            this.circularPictureBox1.Name = "circularPictureBox1";
+            this.circularPictureBox1.Size = new System.Drawing.Size(88, 88);
+            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.circularPictureBox1.TabIndex = 2;
+            this.circularPictureBox1.TabStop = false;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,13 +329,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).EndInit();
             this.panelBarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

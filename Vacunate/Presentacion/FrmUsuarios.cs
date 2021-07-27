@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Common;
 using Domain;
+using Presentacion.Usuario;
 
 namespace Presentacion
 {
@@ -57,6 +58,12 @@ namespace Presentacion
             }
 
             return tabla;
+        }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            FrmAgregarUsuario frmAgregar = new FrmAgregarUsuario();
+            frmAgregar.ShowDialog();
         }
     }
 }
