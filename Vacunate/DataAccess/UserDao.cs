@@ -104,6 +104,28 @@ namespace DataAccess
                 }
             }
         }
+        public void SaveUsers(User user)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "Insert Into Users (LoginName,Password,FirstName,LastName,Email,Rol,Identification) values" +
+                        "(@loginName,@password,@name,@lastName,@mail,@rol,@identification)";
+                    command.Parameters.AddWithValue("@loginName", user.UserName);
+                    command.Parameters.AddWithValue("@password", user.Password);
+                    command.Parameters.AddWithValue("@name", user.Name);
+                    command.Parameters.AddWithValue("@lastName", user.LastName);
+                    command.Parameters.AddWithValue("@mail", user.Mail);
+                    command.Parameters.AddWithValue("@rol", user.Rol);
+                    command.Parameters.AddWithValue("@identification", user.Identification);
+                    command.CommandType = CommandType.Text;
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
         public List<User> GetUsers()
         {
             using (var connection = GetConnection())
@@ -134,6 +156,29 @@ namespace DataAccess
                     else
                     {
                         return users;
+                    }
+                }
+            }
+        }
+        public bool GetUserByUserName(string userName)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "Select * from Users where LoginName=@user";
+                    command.Parameters.AddWithValue("@user", userName);
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
                     }
                 }
             }
