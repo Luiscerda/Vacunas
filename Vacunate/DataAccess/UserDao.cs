@@ -148,6 +148,7 @@ namespace DataAccess
                             user.LastName = reader.GetString(4);
                             user.Rol = reader.GetString(6);
                             user.Mail = reader.GetString(5);
+                            user.Id = reader.GetInt32(0);
 
                             users.Add(user);
                         }
@@ -179,6 +180,42 @@ namespace DataAccess
                     else
                     {
                         return false;
+                    }
+                }
+            }
+        }
+        public User GetUserById(int id)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                User user = new User();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "Select * from Users where UserId=@id";
+                    command.Parameters.AddWithValue("@id", id);
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            user.UserName = reader.GetString(1);
+                            user.Name = reader.GetString(3);
+                            user.LastName = reader.GetString(4);
+                            user.Rol = reader.GetString(6);
+                            user.Mail = reader.GetString(5);
+                            user.Id = reader.GetInt32(0);
+                            user.Identification = reader.GetString(7);
+                            user.Password = reader.GetString(2);
+
+                        }
+                        return user;
+                    }
+                    else
+                    {
+                        return user;
                     }
                 }
             }

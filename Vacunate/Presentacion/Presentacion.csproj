@@ -115,6 +115,12 @@
     <Compile Include="Usuario\FrmAgregarUsuario.Designer.cs">
       <DependentUpon>FrmAgregarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Usuario\FrmViewDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\FrmViewDetails.Designer.cs">
+      <DependentUpon>FrmViewDetails.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmBienvenida.resx">
       <DependentUpon>FrmBienvenida.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +157,9 @@
     </Compile>
     <EmbeddedResource Include="Usuario\FrmAgregarUsuario.resx">
       <DependentUpon>FrmAgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\FrmViewDetails.resx">
+      <DependentUpon>FrmViewDetails.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -19,6 +19,7 @@ namespace Presentacion
         public FrmUsuarios()
         {
             InitializeComponent();
+            GridUsers.ClearSelection();
             LoadUsers();
         }
         private void LoadUsers()
@@ -27,6 +28,7 @@ namespace Presentacion
             if (users.Count() > 0)
             {
                 GridUsers.DataSource = PintarUsers(users);
+                
             }
         }
 
@@ -37,7 +39,6 @@ namespace Presentacion
         public DataTable PintarUsers(IList<User> users)
         {
             DataTable tabla = new DataTable();
-            int cont = 0;
             tabla.Columns.Add("Num");
             tabla.Columns.Add("Usuario");
             tabla.Columns.Add("Nombre completo");
@@ -47,8 +48,7 @@ namespace Presentacion
             foreach (var item in users)
             {
                 DataRow fila = tabla.NewRow();
-                cont += 1;
-                fila["Num"] = cont;
+                fila["Num"] = item.Id;
                 fila["Usuario"] = item.UserName;
                 fila["Nombre completo"] = item.Name + " " + item.LastName;
                 fila["Rol"] = item.Rol;
@@ -64,6 +64,32 @@ namespace Presentacion
         {
             FrmAgregarUsuario frmAgregar = new FrmAgregarUsuario();
             frmAgregar.ShowDialog();
+        }
+
+        private void btnViewDetails_Click(object sender, EventArgs e)
+        {
+            Int32 selectedColumnCount = GridUsers.GetCellCount(DataGridViewElementStates.Selected);
+            if (selectedColumnCount != GridUsers.Columns.Count)
+            {
+                MessageBox.Show("Seleccione una fila", "Error");
+            }
+            else
+            {
+                var id = GridUsers.CurrentRow.Cells[0].Value;
+                var User = UserModel.GetUserById(Convert.ToInt32(id));
+                FrmViewDetails viewDetails = new FrmViewDetails(User);
+                viewDetails.ShowDialog();
+            }
+        }
+
+        private void GridUsers_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            //for (int i = 0; i < GridUsers.Rows[e.RowIndex].Cells.Count; i++)
+            //{
+            //    string sele = GridUsers[i, e.RowIndex].Value.ToString();
+            //}
+            string sel = GridUsers.Rows[e.RowIndex].Cells[0].Value.ToString();
+
         }
     }
 }

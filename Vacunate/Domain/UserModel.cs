@@ -87,5 +87,9 @@ namespace Domain
                 return "Error " + e.Message;
             }
         }
+        public User GetUserById(int id)
+        {
+            return userDao.GetUserById(id);
+        }
     }
 }
