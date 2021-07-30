@@ -34,7 +34,6 @@ namespace Domain
                 throw;
             }
         }
-
         public string EditProfile(User user)
         {          
             try
@@ -90,6 +89,30 @@ namespace Domain
         public User GetUserById(int id)
         {
             return userDao.GetUserById(id);
+        }
+        public string UpdateUser(User user)
+        {
+            try
+            {
+                userDao.UpdateUser(user);
+                return "Usuario modificado con exito";
+            }
+            catch (Exception e)
+            {
+                return "Error: " + e.Message;
+            }
+        }
+        public string DeleteUser(int id)
+        {
+            try
+            {
+                userDao.DeleteUser(id);
+                return "Usuario eliminado con exito";
+            }
+            catch (Exception e)
+            {
+                return "Error: " + e.Message;
+            }
         }
     }
 }

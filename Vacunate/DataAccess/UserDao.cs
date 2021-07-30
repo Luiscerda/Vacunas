@@ -149,6 +149,7 @@ namespace DataAccess
                             user.Rol = reader.GetString(6);
                             user.Mail = reader.GetString(5);
                             user.Id = reader.GetInt32(0);
+                            //user.Identification = reader.GetString(7);
 
                             users.Add(user);
                         }
@@ -207,7 +208,7 @@ namespace DataAccess
                             user.Rol = reader.GetString(6);
                             user.Mail = reader.GetString(5);
                             user.Id = reader.GetInt32(0);
-                            user.Identification = reader.GetString(7);
+                            user.Identification = string.IsNullOrEmpty(reader.GetString(7)) ? "" : reader.GetString(7);
                             user.Password = reader.GetString(2);
 
                         }
@@ -217,6 +218,40 @@ namespace DataAccess
                     {
                         return user;
                     }
+                }
+            }
+        }
+        public void UpdateUser(User user)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "Update  Users set FirstName=@name,Password=@password,LastName=@lastName, Email=@mail where UserId=@id";
+                    command.Parameters.AddWithValue("@name", user.Name);
+                    command.Parameters.AddWithValue("@password", user.Password);
+                    command.Parameters.AddWithValue("@lastName", user.LastName);
+                    command.Parameters.AddWithValue("@mail", user.Mail);
+                    command.Parameters.AddWithValue("@id", user.Id);
+                    command.CommandType = CommandType.Text;
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+        public void DeleteUser(int id)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "Delete  Users where UserId=@id";
+                    command.Parameters.AddWithValue("@id", id);
+                    command.CommandType = CommandType.Text;
+                    command.ExecuteNonQuery();
                 }
             }
         }

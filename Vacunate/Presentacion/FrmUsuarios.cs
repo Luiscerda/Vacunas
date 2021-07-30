@@ -22,7 +22,7 @@ namespace Presentacion
             GridUsers.ClearSelection();
             LoadUsers();
         }
-        private void LoadUsers()
+        public void LoadUsers()
         {
             List<User> users = UserModel.GetUsers();
             if (users.Count() > 0)
@@ -65,7 +65,6 @@ namespace Presentacion
             FrmAgregarUsuario frmAgregar = new FrmAgregarUsuario();
             frmAgregar.ShowDialog();
         }
-
         private void btnViewDetails_Click(object sender, EventArgs e)
         {
             Int32 selectedColumnCount = GridUsers.GetCellCount(DataGridViewElementStates.Selected);
@@ -81,15 +80,36 @@ namespace Presentacion
                 viewDetails.ShowDialog();
             }
         }
-
-        private void GridUsers_RowEnter(object sender, DataGridViewCellEventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            //for (int i = 0; i < GridUsers.Rows[e.RowIndex].Cells.Count; i++)
-            //{
-            //    string sele = GridUsers[i, e.RowIndex].Value.ToString();
-            //}
-            string sel = GridUsers.Rows[e.RowIndex].Cells[0].Value.ToString();
+            Int32 selectedColumnCount = GridUsers.GetCellCount(DataGridViewElementStates.Selected);
+            if (selectedColumnCount != GridUsers.Columns.Count)
+            {
+                MessageBox.Show("Seleccione una fila", "Error");
+            }
+            else
+            {
+                var id = GridUsers.CurrentRow.Cells[0].Value;
+                var User = UserModel.GetUserById(Convert.ToInt32(id));
+                FrmModificarUsuario modificarUsuario = new FrmModificarUsuario(User);
+                modificarUsuario.ShowDialog();
+            }
+        }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Int32 selectedColumnCount = GridUsers.GetCellCount(DataGridViewElementStates.Selected);
+            if (selectedColumnCount != GridUsers.Columns.Count)
+            {
+                MessageBox.Show("Seleccione una fila", "Error");
+            }
+            else
+            {
+                var id = GridUsers.CurrentRow.Cells[0].Value;
+                var User = UserModel.GetUserById(Convert.ToInt32(id));
+                FrmEliminarUsuario eliminarUsuario = new FrmEliminarUsuario(User);
+                eliminarUsuario.ShowDialog();
+            }
         }
     }
 }
