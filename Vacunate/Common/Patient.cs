@@ -16,5 +16,9 @@ namespace Common
         public string Identification { get; set; }
         public string Telephone { get; set; }
         public DateTime DateOfBirth { get; set; }
+        public string TipoDoc { get; set; }
+        public int UserReg { get; set; }
+        public DateTime FechaReg { get; set; }
+        public string Password { get; set; }
     }
 }

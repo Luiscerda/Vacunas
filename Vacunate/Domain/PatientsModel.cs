@@ -41,5 +41,25 @@ namespace Domain
                 return "Error " + e.Message;
             }
         }
+        public List<Patient> GetPatients()
+        {
+            try
+            {
+                return PatientsDao.GetPatients();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public bool Login(string user, string password)
+        {
+            return PatientsDao.Login(user, password);
+        }
+        public Patient GetPatient(string identificacion)
+        {
+            return PatientsDao.GetPatientById(identificacion);
+        }
     }
 }

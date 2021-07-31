@@ -11,7 +11,6 @@ namespace Domain
     public class UserModel
     {
         UserDao userDao = new UserDao();
-        PatientsModel patientsModel = new PatientsModel();
         public bool Login(string user, string password)
         {
             return userDao.Login(user,password);
@@ -58,26 +57,7 @@ namespace Domain
                 }
                 else
                 {
-                    if (user.Rol.Trim() == "Paciente")
-                    {
-                        userDao.SaveUsers(user);
-                        Patient patient = new Patient
-                        {
-                            FirstName = user.Name,
-                            LastName = user.LastName,
-                            Mail = user.Mail,
-                            Identification = user.Identification,
-                            DateOfBirth = DateTime.Now,
-                            Telephone = "",
-                            Age = 0,
-                        };
-                        patientsModel.SavePatient(patient);
-                    }
-                    else
-                    {
-                        userDao.SaveUsers(user);
-                    }
-                   
+                    userDao.SaveUsers(user);
                     return "Registro con exito";
                 }
             }

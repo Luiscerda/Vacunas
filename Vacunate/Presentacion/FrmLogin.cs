@@ -110,38 +110,57 @@ namespace Presentacion
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUserName.Text != "Usuario")
+            var rol = radioButtonPaciente.Checked ? "P" : radioButtonFunci.Checked ? "F" : null;
+            bool validLogin = false;
+            if (rol != null)
             {
-                if (txtPassword.Text != "Contraseña")
+                if (txtUserName.Text != "Usuario")
                 {
-                    UserModel userModel = new UserModel();
-                    var validLogin = userModel.Login(txtUserName.Text.Trim(),txtPassword.Text.Trim());
-                    if (validLogin)
+                    if (txtPassword.Text != "Contraseña")
                     {
-                        this.Hide();
-                        FrmBienvenida bienvenida = new FrmBienvenida();
-                        bienvenida.ShowDialog();
-                        FrmPrincipal principal = new FrmPrincipal();
-                        principal.Show();
-                       
+                        if (rol == "F")
+                        {
+                            UserModel userModel = new UserModel();
+                            validLogin = userModel.Login(txtUserName.Text.Trim(), txtPassword.Text.Trim());
+                        }
+                        else
+                        {
+                            PatientsModel patientsModel = new PatientsModel();
+                            validLogin = patientsModel.Login(txtUserName.Text.Trim(), txtPassword.Text.Trim());
+                        }
+                        
+                        if (validLogin)
+                        {
+                            this.Hide();
+                            FrmBienvenida bienvenida = new FrmBienvenida();
+                            bienvenida.ShowDialog();
+                            FrmPrincipal principal = new FrmPrincipal();
+                            principal.Show();
+
+                        }
+                        else
+                        {
+                            MsgError("Usuario o Contraseña incorrectos. \n Por favor intentelo nuevamente");
+                            txtPassword.Text = "Contraseña";
+                            txtPassword.UseSystemPasswordChar = false;
+                            txtUserName.Focus();
+                        }
                     }
                     else
                     {
-                        MsgError("Usuario o Contraseña incorrectos. \n Por favor intentelo nuevamente");
-                        txtPassword.Text = "Contraseña";
-                        txtPassword.UseSystemPasswordChar = false;
-                        txtUserName.Focus();
+                        MsgError("Por favor digite su Contraseña");
                     }
                 }
                 else
                 {
-                    MsgError("Por favor digite su Contraseña");
+                    MsgError("Por favor digite su Usuario");
                 }
             }
             else
             {
-                MsgError("Por favor digite su Usuario");
+                MsgError("Por favor seleccione su rol");
             }
+           
         }
 
         private void linkLabelRecuperarContraseña_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

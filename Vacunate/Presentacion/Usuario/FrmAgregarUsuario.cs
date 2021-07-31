@@ -23,11 +23,6 @@ namespace Presentacion.Usuario
             userModel = new UserModel();
             LoadRol();
         }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -218,6 +213,11 @@ namespace Presentacion.Usuario
             txtConfirmPassword.Text = string.Empty;
             txtUserName.Text = string.Empty;
             cmbRoles.Text = string.Empty;
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

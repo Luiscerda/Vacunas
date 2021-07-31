@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,8 +55,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtIdentificacion = new System.Windows.Forms.TextBox();
             this.circularPictureBox1 = new Presentacion.Controles.CircularPictureBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,18 +70,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(747, 35);
             this.panel1.TabIndex = 0;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Image = global::Presentacion.Properties.Resources.Close_Icon;
-            this.btnClose.Location = new System.Drawing.Point(715, 4);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(18, 22);
-            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnClose.TabIndex = 1;
-            this.btnClose.TabStop = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label1
             // 
@@ -369,6 +356,20 @@
             this.circularPictureBox1.TabIndex = 2;
             this.circularPictureBox1.TabStop = false;
             // 
+            // btnClose
+            // 
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = global::Presentacion.Properties.Resources.Close_Icon;
+            this.btnClose.Location = new System.Drawing.Point(701, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(46, 35);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
+            // 
             // FrmAgregarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -406,7 +407,6 @@
             this.Text = "FrmAgregarUsuario";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -417,7 +417,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox btnClose;
         private System.Windows.Forms.Label label2;
         private Controles.CircularPictureBox circularPictureBox1;
         private System.Windows.Forms.Label label3;
@@ -443,5 +442,6 @@
         private System.Windows.Forms.Label labelConfirmPass;
         private System.Windows.Forms.TextBox txtIdentificacion;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnClose;
     }
 }

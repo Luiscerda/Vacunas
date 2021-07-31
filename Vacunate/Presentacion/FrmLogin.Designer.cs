@@ -44,6 +44,8 @@
             this.labelErrorMessage = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.radioButtonPaciente = new System.Windows.Forms.RadioButton();
+            this.radioButtonFunci = new System.Windows.Forms.RadioButton();
             this.titleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -90,7 +92,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(142)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 531);
+            this.panel1.Location = new System.Drawing.Point(0, 548);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(337, 10);
             this.panel1.TabIndex = 1;
@@ -101,7 +103,7 @@
             this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUserName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.ForeColor = System.Drawing.Color.Black;
-            this.txtUserName.Location = new System.Drawing.Point(40, 249);
+            this.txtUserName.Location = new System.Drawing.Point(40, 309);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(259, 20);
             this.txtUserName.TabIndex = 2;
@@ -115,7 +117,7 @@
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtPassword.Location = new System.Drawing.Point(40, 299);
+            this.txtPassword.Location = new System.Drawing.Point(40, 356);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(259, 20);
             this.txtPassword.TabIndex = 4;
@@ -130,7 +132,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(40, 396);
+            this.btnLogin.Location = new System.Drawing.Point(40, 444);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(259, 39);
             this.btnLogin.TabIndex = 0;
@@ -148,7 +150,7 @@
             this.lineShape3,
             this.lineShape2,
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(337, 541);
+            this.shapeContainer1.Size = new System.Drawing.Size(337, 558);
             this.shapeContainer1.TabIndex = 8;
             this.shapeContainer1.TabStop = false;
             // 
@@ -158,8 +160,8 @@
             this.lineShape3.Name = "lineShape3";
             this.lineShape3.X1 = 41;
             this.lineShape3.X2 = 285;
-            this.lineShape3.Y1 = 324;
-            this.lineShape3.Y2 = 324;
+            this.lineShape3.Y1 = 381;
+            this.lineShape3.Y2 = 381;
             // 
             // lineShape2
             // 
@@ -167,8 +169,8 @@
             this.lineShape2.Name = "lineShape2";
             this.lineShape2.X1 = 42;
             this.lineShape2.X2 = 286;
-            this.lineShape2.Y1 = 275;
-            this.lineShape2.Y2 = 275;
+            this.lineShape2.Y1 = 333;
+            this.lineShape2.Y2 = 333;
             // 
             // lineShape1
             // 
@@ -176,8 +178,8 @@
             this.lineShape1.Name = "lineShape1";
             this.lineShape1.X1 = 45;
             this.lineShape1.X2 = 289;
-            this.lineShape1.Y1 = 453;
-            this.lineShape1.Y2 = 453;
+            this.lineShape1.Y1 = 511;
+            this.lineShape1.Y2 = 511;
             // 
             // linkLabelRecuperarContraseña
             // 
@@ -187,7 +189,7 @@
             this.linkLabelRecuperarContraseña.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelRecuperarContraseña.ForeColor = System.Drawing.Color.Black;
             this.linkLabelRecuperarContraseña.LinkColor = System.Drawing.Color.Black;
-            this.linkLabelRecuperarContraseña.Location = new System.Drawing.Point(92, 465);
+            this.linkLabelRecuperarContraseña.Location = new System.Drawing.Point(92, 514);
             this.linkLabelRecuperarContraseña.Name = "linkLabelRecuperarContraseña";
             this.linkLabelRecuperarContraseña.Size = new System.Drawing.Size(140, 20);
             this.linkLabelRecuperarContraseña.TabIndex = 9;
@@ -200,7 +202,7 @@
             this.labelErrorMessage.AutoSize = true;
             this.labelErrorMessage.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelErrorMessage.ForeColor = System.Drawing.Color.Red;
-            this.labelErrorMessage.Location = new System.Drawing.Point(42, 346);
+            this.labelErrorMessage.Location = new System.Drawing.Point(42, 397);
             this.labelErrorMessage.Name = "labelErrorMessage";
             this.labelErrorMessage.Size = new System.Drawing.Size(110, 18);
             this.labelErrorMessage.TabIndex = 1;
@@ -212,8 +214,8 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label1.Location = new System.Drawing.Point(130, 192);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(128)))), ((int)(((byte)(188)))));
+            this.label1.Location = new System.Drawing.Point(130, 194);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 15);
             this.label1.TabIndex = 11;
@@ -229,12 +231,39 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
+            // radioButtonPaciente
+            // 
+            this.radioButtonPaciente.AutoSize = true;
+            this.radioButtonPaciente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonPaciente.ForeColor = System.Drawing.Color.Black;
+            this.radioButtonPaciente.Location = new System.Drawing.Point(69, 261);
+            this.radioButtonPaciente.Name = "radioButtonPaciente";
+            this.radioButtonPaciente.Size = new System.Drawing.Size(83, 21);
+            this.radioButtonPaciente.TabIndex = 14;
+            this.radioButtonPaciente.TabStop = true;
+            this.radioButtonPaciente.Text = "Paciente";
+            this.radioButtonPaciente.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonFunci
+            // 
+            this.radioButtonFunci.AutoSize = true;
+            this.radioButtonFunci.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonFunci.Location = new System.Drawing.Point(174, 261);
+            this.radioButtonFunci.Name = "radioButtonFunci";
+            this.radioButtonFunci.Size = new System.Drawing.Size(101, 21);
+            this.radioButtonFunci.TabIndex = 15;
+            this.radioButtonFunci.TabStop = true;
+            this.radioButtonFunci.Text = "Funcionario";
+            this.radioButtonFunci.UseVisualStyleBackColor = true;
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(337, 541);
+            this.ClientSize = new System.Drawing.Size(337, 558);
+            this.Controls.Add(this.radioButtonFunci);
+            this.Controls.Add(this.radioButtonPaciente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelErrorMessage);
             this.Controls.Add(this.pictureBox1);
@@ -278,6 +307,8 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton radioButtonPaciente;
+        private System.Windows.Forms.RadioButton radioButtonFunci;
     }
 }
 
