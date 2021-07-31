@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,8 +44,6 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cmbRoles = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -55,7 +54,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtIdentificacion = new System.Windows.Forms.TextBox();
             this.circularPictureBox1 = new Presentacion.Controles.CircularPictureBox();
-            this.btnClose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +68,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(747, 35);
             this.panel1.TabIndex = 0;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = global::Presentacion.Properties.Resources.Close_Icon;
+            this.btnClose.Location = new System.Drawing.Point(701, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(46, 35);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
             // 
             // label1
             // 
@@ -215,25 +227,6 @@
             this.label8.TabIndex = 11;
             this.label8.Text = "Correo:";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(251, 274);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(32, 16);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Rol:";
-            // 
-            // cmbRoles
-            // 
-            this.cmbRoles.FormattingEnabled = true;
-            this.cmbRoles.Location = new System.Drawing.Point(254, 293);
-            this.cmbRoles.Name = "cmbRoles";
-            this.cmbRoles.Size = new System.Drawing.Size(197, 21);
-            this.cmbRoles.TabIndex = 16;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -356,20 +349,6 @@
             this.circularPictureBox1.TabIndex = 2;
             this.circularPictureBox1.TabStop = false;
             // 
-            // btnClose
-            // 
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::Presentacion.Properties.Resources.Close_Icon;
-            this.btnClose.Location = new System.Drawing.Point(701, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(46, 35);
-            this.btnClose.TabIndex = 2;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
-            // 
             // FrmAgregarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,8 +362,6 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.cmbRoles);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.txtConfirmPassword);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label7);
@@ -431,8 +408,6 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cmbRoles;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

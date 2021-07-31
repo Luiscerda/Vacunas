@@ -20,5 +20,7 @@ namespace Common
         public int UserReg { get; set; }
         public DateTime FechaReg { get; set; }
         public string Password { get; set; }
+        public int UserMod { get; set; }
+        public DateTime FechaMod { get; set; }
     }
 }

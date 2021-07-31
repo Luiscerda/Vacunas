@@ -50,10 +50,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtEdad = new System.Windows.Forms.TextBox();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.dateTimeFecha = new System.Windows.Forms.DateTimePicker();
-            this.circularPictureBox1 = new Presentacion.Controles.CircularPictureBox();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.circularPictureBox1 = new Presentacion.Controles.CircularPictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -299,19 +299,20 @@
             this.txtEdad.Size = new System.Drawing.Size(197, 21);
             this.txtEdad.TabIndex = 39;
             // 
-            // btnUpdate
+            // btnDelete
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.IndianRed;
-            this.btnUpdate.FlatAppearance.BorderSize = 0;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(406, 340);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(135, 36);
-            this.btnUpdate.TabIndex = 42;
-            this.btnUpdate.Text = "Modificar";
-            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.Color.IndianRed;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(406, 340);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(135, 36);
+            this.btnDelete.TabIndex = 42;
+            this.btnDelete.Text = "Eliminar";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // dateTimeFecha
             // 
@@ -321,21 +322,6 @@
             this.dateTimeFecha.Name = "dateTimeFecha";
             this.dateTimeFecha.Size = new System.Drawing.Size(200, 20);
             this.dateTimeFecha.TabIndex = 43;
-            // 
-            // circularPictureBox1
-            // 
-            this.circularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.circularPictureBox1.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.circularPictureBox1.BorderColor2 = System.Drawing.SystemColors.ActiveCaptionText;
-            this.circularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.circularPictureBox1.BorderSize = 1;
-            this.circularPictureBox1.GradientAngle = 50F;
-            this.circularPictureBox1.Location = new System.Drawing.Point(55, 112);
-            this.circularPictureBox1.Name = "circularPictureBox1";
-            this.circularPictureBox1.Size = new System.Drawing.Size(150, 150);
-            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.circularPictureBox1.TabIndex = 3;
-            this.circularPictureBox1.TabStop = false;
             // 
             // btnCancelar
             // 
@@ -352,6 +338,21 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
+            // circularPictureBox1
+            // 
+            this.circularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.circularPictureBox1.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.circularPictureBox1.BorderColor2 = System.Drawing.SystemColors.ActiveCaptionText;
+            this.circularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.circularPictureBox1.BorderSize = 1;
+            this.circularPictureBox1.GradientAngle = 50F;
+            this.circularPictureBox1.Location = new System.Drawing.Point(55, 112);
+            this.circularPictureBox1.Name = "circularPictureBox1";
+            this.circularPictureBox1.Size = new System.Drawing.Size(150, 150);
+            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.circularPictureBox1.TabIndex = 3;
+            this.circularPictureBox1.TabStop = false;
+            // 
             // FrmEliminarPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,7 +360,7 @@
             this.ClientSize = new System.Drawing.Size(747, 409);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.dateTimeFecha);
-            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.txtEdad);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
@@ -417,7 +418,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtEdad;
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DateTimePicker dateTimeFecha;
         private System.Windows.Forms.Button btnCancelar;
     }

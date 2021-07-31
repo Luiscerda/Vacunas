@@ -70,7 +70,7 @@ namespace DataAccess
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "Select * from Pacients";
+                    command.CommandText = "Select * from Pacients where Activo=1";
                     command.CommandType = CommandType.Text;
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.HasRows)
@@ -164,6 +164,42 @@ namespace DataAccess
                     {
                         return patient;
                     }
+                }
+            }
+        }
+        public void UpdatePatient(Patient patient)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "Update  Pacients set FirstName=@name,LastName=@lastName,Email=@mail,Telephone=@telephone,UserMod=@userMod,FechaMod=@fechaMod where Identification=@identification";
+                    command.Parameters.AddWithValue("@name", patient.FirstName);
+                    command.Parameters.AddWithValue("@lastName", patient.LastName);
+                    command.Parameters.AddWithValue("@mail", patient.Mail);
+                    command.Parameters.AddWithValue("@telephone", patient.Telephone);
+                    command.Parameters.AddWithValue("@userMod", patient.UserMod);
+                    command.Parameters.AddWithValue("@fechaMod", patient.FechaMod);
+                    command.Parameters.AddWithValue("@identification", patient.Identification);
+                    command.CommandType = CommandType.Text;
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+        public void DeletePatient(string identificacion)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "Update  Pacients set Activo=0 where Identification=@identification";
+                    command.Parameters.AddWithValue("@identification", identificacion);
+                    command.CommandType = CommandType.Text;
+                    command.ExecuteNonQuery();
                 }
             }
         }

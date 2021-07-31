@@ -61,5 +61,29 @@ namespace Domain
         {
             return PatientsDao.GetPatientById(identificacion);
         }
+        public string UpdatePatient(Patient patient)
+        {
+            try
+            {
+                PatientsDao.UpdatePatient(patient);
+                return "Paciente modificado con exito";
+            }
+            catch (Exception e)
+            {
+                return "Error: " + e.Message;
+            }
+        }
+        public string DeletePatient(string identificacion)
+        {
+            try
+            {
+                PatientsDao.DeletePatient(identificacion);
+                return "Paciente eliminado con exito";
+            }
+            catch (Exception e)
+            {
+                return "Error: " + e.Message;
+            }
+        }
     }
 }

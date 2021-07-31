@@ -16,6 +16,7 @@ namespace Presentacion
     public partial class FrmPacientes : Form
     {
         PatientsModel patientsModel;
+        List<Patient> listPatients = new List<Patient>();
         public FrmPacientes()
         {
             InitializeComponent();
@@ -31,9 +32,9 @@ namespace Presentacion
         {
             List<Patient> patients = patientsModel.GetPatients();
             if (patients.Count() > 0)
-            {
+           {
                 GridPacientes.DataSource = PintarPatients(patients);
-
+                listPatients = patients;
             }
         }
         public DataTable PintarPatients(IList<Patient> patients)
@@ -110,6 +111,22 @@ namespace Presentacion
                 FrmEliminarPaciente frmEliminar = new FrmEliminarPaciente(patient);
                 frmEliminar.ShowDialog();
             }
+        }
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSearch.Text))
+            {
+                LoadPatients();
+            }
+            else
+            {
+                LoadSearch(txtSearch.Text);
+            }
+        }
+        private void LoadSearch(string parametro)
+        {
+            List<Patient> filter = listPatients.Where(c => c.Identification.ToUpper().Contains(parametro.ToUpper()) || c.FirstName.ToUpper().Contains(parametro.ToUpper()) || c.LastName.ToUpper().Contains(parametro.ToUpper())).ToList();
+            GridPacientes.DataSource = PintarPatients(filter);
         }
     }
 }

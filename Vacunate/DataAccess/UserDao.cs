@@ -149,7 +149,7 @@ namespace DataAccess
                             user.Rol = reader.GetString(6);
                             user.Mail = reader.GetString(5);
                             user.Id = reader.GetInt32(0);
-                            //user.Identification = reader.GetString(7);
+                            user.Identification = reader.GetString(7);
 
                             users.Add(user);
                         }

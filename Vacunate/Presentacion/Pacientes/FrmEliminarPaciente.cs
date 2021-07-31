@@ -14,10 +14,14 @@ namespace Presentacion.Pacientes
 {
     public partial class FrmEliminarPaciente : Form
     {
+        string identificacionEliminar = "";
+        PatientsModel patientsModel;
         public FrmEliminarPaciente(Patient patient)
         {
             InitializeComponent();
             LoadPatient(patient);
+            patientsModel = new PatientsModel();
+            identificacionEliminar = patient.Identification.Trim();
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -37,6 +41,12 @@ namespace Presentacion.Pacientes
             txtTelephone.Text = patient.Telephone;
             cmbTiposDoc.Text = patient.TipoDoc;
             dateTimeFecha.Text = patient.DateOfBirth.ToString();
+        }
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string mensaje = patientsModel.DeletePatient(identificacionEliminar);
+            MessageBox.Show(mensaje,"Mensaje");
+            this.Close();
         }
     }
 }

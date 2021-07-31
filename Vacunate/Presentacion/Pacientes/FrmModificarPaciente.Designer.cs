@@ -52,9 +52,9 @@
             this.txtEdad = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.dateTimeFecha = new System.Windows.Forms.DateTimePicker();
-            this.circularPictureBox1 = new Presentacion.Controles.CircularPictureBox();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.highlighter1 = new DevComponents.DotNetBar.Validator.Highlighter();
+            this.validacion = new DevComponents.DotNetBar.Validator.Highlighter();
+            this.circularPictureBox1 = new Presentacion.Controles.CircularPictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -174,9 +174,9 @@
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(254, 242);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(197, 21);
             this.txtEmail.TabIndex = 29;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // label8
             // 
@@ -194,9 +194,9 @@
             this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.Location = new System.Drawing.Point(477, 185);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.ReadOnly = true;
             this.txtLastName.Size = new System.Drawing.Size(197, 21);
             this.txtLastName.TabIndex = 27;
+            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
             // 
             // label6
             // 
@@ -234,9 +234,9 @@
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstName.Location = new System.Drawing.Point(254, 186);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.ReadOnly = true;
             this.txtFirstName.Size = new System.Drawing.Size(197, 21);
             this.txtFirstName.TabIndex = 33;
+            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
             // label4
             // 
@@ -265,9 +265,9 @@
             this.txtTelephone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelephone.Location = new System.Drawing.Point(477, 237);
             this.txtTelephone.Name = "txtTelephone";
-            this.txtTelephone.ReadOnly = true;
             this.txtTelephone.Size = new System.Drawing.Size(197, 21);
             this.txtTelephone.TabIndex = 36;
+            this.txtTelephone.TextChanged += new System.EventHandler(this.txtTelephone_TextChanged);
             // 
             // label7
             // 
@@ -313,6 +313,7 @@
             this.btnUpdate.TabIndex = 42;
             this.btnUpdate.Text = "Modificar";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // dateTimeFecha
             // 
@@ -322,21 +323,6 @@
             this.dateTimeFecha.Name = "dateTimeFecha";
             this.dateTimeFecha.Size = new System.Drawing.Size(200, 20);
             this.dateTimeFecha.TabIndex = 43;
-            // 
-            // circularPictureBox1
-            // 
-            this.circularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.circularPictureBox1.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.circularPictureBox1.BorderColor2 = System.Drawing.SystemColors.ActiveCaptionText;
-            this.circularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.circularPictureBox1.BorderSize = 1;
-            this.circularPictureBox1.GradientAngle = 50F;
-            this.circularPictureBox1.Location = new System.Drawing.Point(55, 112);
-            this.circularPictureBox1.Name = "circularPictureBox1";
-            this.circularPictureBox1.Size = new System.Drawing.Size(150, 150);
-            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.circularPictureBox1.TabIndex = 3;
-            this.circularPictureBox1.TabStop = false;
             // 
             // btnCancelar
             // 
@@ -353,9 +339,24 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
-            // highlighter1
+            // validacion
             // 
-            this.highlighter1.ContainerControl = this;
+            this.validacion.ContainerControl = this;
+            // 
+            // circularPictureBox1
+            // 
+            this.circularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.circularPictureBox1.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.circularPictureBox1.BorderColor2 = System.Drawing.SystemColors.ActiveCaptionText;
+            this.circularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.circularPictureBox1.BorderSize = 1;
+            this.circularPictureBox1.GradientAngle = 50F;
+            this.circularPictureBox1.Location = new System.Drawing.Point(55, 112);
+            this.circularPictureBox1.Name = "circularPictureBox1";
+            this.circularPictureBox1.Size = new System.Drawing.Size(150, 150);
+            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.circularPictureBox1.TabIndex = 3;
+            this.circularPictureBox1.TabStop = false;
             // 
             // FrmModificarPaciente
             // 
@@ -425,6 +426,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DateTimePicker dateTimeFecha;
         private System.Windows.Forms.Button btnCancelar;
-        private DevComponents.DotNetBar.Validator.Highlighter highlighter1;
+        private DevComponents.DotNetBar.Validator.Highlighter validacion;
     }
 }

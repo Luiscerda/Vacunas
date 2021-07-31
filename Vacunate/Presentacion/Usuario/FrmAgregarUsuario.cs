@@ -21,18 +21,11 @@ namespace Presentacion.Usuario
         {
             InitializeComponent();
             userModel = new UserModel();
-            LoadRol();
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        private void LoadRol()
-        {
-            cmbRoles.Items.Add(Roles.Administrator);
-            cmbRoles.Items.Add(Roles.Paciente);
-        }
-
         private void btnSaveUser_Click(object sender, EventArgs e)
         {
             User user = new User();
@@ -40,7 +33,7 @@ namespace Presentacion.Usuario
             user.LastName = txtLastName.Text;
             user.Mail = txtEmail.Text;
             user.Password = txtPassword.Text;
-            user.Rol = cmbRoles.Text;
+            user.Rol = "Administrator";
             user.UserName = txtUserName.Text;
             user.Identification = txtIdentificacion.Text;
             string validar = ValidatedFields(user,txtConfirmPassword.Text);
@@ -58,7 +51,6 @@ namespace Presentacion.Usuario
             
            
         }
-
         public string ValidatedFields(User user,string confirmPassword)
         {
             if (string.IsNullOrEmpty(user.Name))
@@ -120,32 +112,26 @@ namespace Presentacion.Usuario
                 }
             }
         }
-
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
             validacion.SetHighlightColor(txtEmail, DevComponents.DotNetBar.Validator.eHighlightColor.None);
         }
-
         private void txtFirstName_TextChanged(object sender, EventArgs e)
         {
             validacion.SetHighlightColor(txtFirstName, DevComponents.DotNetBar.Validator.eHighlightColor.None);
         }
-
         private void txtLastName_TextChanged(object sender, EventArgs e)
         {
             validacion.SetHighlightColor(txtLastName, DevComponents.DotNetBar.Validator.eHighlightColor.None);
         }
-
         private void txtUserName_TextChanged(object sender, EventArgs e)
         {
             validacion.SetHighlightColor(txtUserName, DevComponents.DotNetBar.Validator.eHighlightColor.None);
         }
-
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
             validacion.SetHighlightColor(txtPassword, DevComponents.DotNetBar.Validator.eHighlightColor.None);
         }
-
         private void txtConfirmPassword_TextChanged(object sender, EventArgs e)
         {
             validacion.SetHighlightColor(txtConfirmPassword, DevComponents.DotNetBar.Validator.eHighlightColor.None);
@@ -198,7 +184,6 @@ namespace Presentacion.Usuario
                     break;
             }
         }
-
         private void txtIdentificacion_TextChanged(object sender, EventArgs e)
         {
             validacion.SetHighlightColor(txtIdentificacion, DevComponents.DotNetBar.Validator.eHighlightColor.None);
@@ -212,9 +197,7 @@ namespace Presentacion.Usuario
             txtPassword.Text = string.Empty;
             txtConfirmPassword.Text = string.Empty;
             txtUserName.Text = string.Empty;
-            cmbRoles.Text = string.Empty;
         }
-
         private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
