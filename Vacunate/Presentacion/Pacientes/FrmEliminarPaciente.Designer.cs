@@ -1,6 +1,6 @@
 ﻿namespace Presentacion.Pacientes
 {
-    partial class FrmAgregarPaciente
+    partial class FrmEliminarPaciente
     {
         /// <summary>
         /// Required designer variable.
@@ -50,18 +50,17 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtEdad = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnSaveUser = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.dateTimeFecha = new System.Windows.Forms.DateTimePicker();
-            this.validacion = new DevComponents.DotNetBar.Validator.Highlighter();
             this.circularPictureBox1 = new Presentacion.Controles.CircularPictureBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.SeaGreen;
+            this.panel1.BackColor = System.Drawing.Color.IndianRed;
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -99,16 +98,17 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label2.Location = new System.Drawing.Point(37, 73);
+            this.label2.ForeColor = System.Drawing.Color.IndianRed;
+            this.label2.Location = new System.Drawing.Point(42, 73);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(201, 19);
+            this.label2.Size = new System.Drawing.Size(145, 19);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Agregar nuevo paciente";
+            this.label2.Text = "Eliminar paciente";
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.IndianRed;
+            this.button2.Enabled = false;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -124,6 +124,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(166)))), ((int)(((byte)(104)))));
+            this.button1.Enabled = false;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -152,9 +153,9 @@
             this.txtIdentificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdentificacion.Location = new System.Drawing.Point(477, 139);
             this.txtIdentificacion.Name = "txtIdentificacion";
+            this.txtIdentificacion.ReadOnly = true;
             this.txtIdentificacion.Size = new System.Drawing.Size(197, 21);
             this.txtIdentificacion.TabIndex = 31;
-            this.txtIdentificacion.TextChanged += new System.EventHandler(this.txtIdentificacion_TextChanged);
             // 
             // label11
             // 
@@ -172,9 +173,9 @@
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(254, 242);
             this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(197, 21);
             this.txtEmail.TabIndex = 29;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // label8
             // 
@@ -192,9 +193,9 @@
             this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.Location = new System.Drawing.Point(477, 185);
             this.txtLastName.Name = "txtLastName";
+            this.txtLastName.ReadOnly = true;
             this.txtLastName.Size = new System.Drawing.Size(197, 21);
             this.txtLastName.TabIndex = 27;
-            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
             // 
             // label6
             // 
@@ -220,21 +221,21 @@
             // 
             // cmbTiposDoc
             // 
+            this.cmbTiposDoc.Enabled = false;
             this.cmbTiposDoc.FormattingEnabled = true;
             this.cmbTiposDoc.Location = new System.Drawing.Point(254, 139);
             this.cmbTiposDoc.Name = "cmbTiposDoc";
             this.cmbTiposDoc.Size = new System.Drawing.Size(197, 21);
             this.cmbTiposDoc.TabIndex = 32;
-            this.cmbTiposDoc.SelectedIndexChanged += new System.EventHandler(this.cmbTiposDoc_SelectedIndexChanged);
             // 
             // txtFirstName
             // 
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstName.Location = new System.Drawing.Point(254, 186);
             this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.ReadOnly = true;
             this.txtFirstName.Size = new System.Drawing.Size(197, 21);
             this.txtFirstName.TabIndex = 33;
-            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
             // label4
             // 
@@ -263,9 +264,9 @@
             this.txtTelephone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelephone.Location = new System.Drawing.Point(477, 237);
             this.txtTelephone.Name = "txtTelephone";
+            this.txtTelephone.ReadOnly = true;
             this.txtTelephone.Size = new System.Drawing.Size(197, 21);
             this.txtTelephone.TabIndex = 36;
-            this.txtTelephone.TextChanged += new System.EventHandler(this.txtTelephone_TextChanged);
             // 
             // label7
             // 
@@ -294,53 +295,32 @@
             this.txtEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEdad.Location = new System.Drawing.Point(254, 293);
             this.txtEdad.Name = "txtEdad";
+            this.txtEdad.ReadOnly = true;
             this.txtEdad.Size = new System.Drawing.Size(197, 21);
             this.txtEdad.TabIndex = 39;
-            this.txtEdad.TextChanged += new System.EventHandler(this.txtEdad_TextChanged);
             // 
-            // btnCancelar
+            // btnUpdate
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(254, 339);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(135, 36);
-            this.btnCancelar.TabIndex = 41;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnSaveUser
-            // 
-            this.btnSaveUser.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnSaveUser.FlatAppearance.BorderSize = 0;
-            this.btnSaveUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveUser.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveUser.ForeColor = System.Drawing.Color.White;
-            this.btnSaveUser.Location = new System.Drawing.Point(408, 339);
-            this.btnSaveUser.Name = "btnSaveUser";
-            this.btnSaveUser.Size = new System.Drawing.Size(135, 36);
-            this.btnSaveUser.TabIndex = 42;
-            this.btnSaveUser.Text = "Guardar";
-            this.btnSaveUser.UseVisualStyleBackColor = false;
-            this.btnSaveUser.Click += new System.EventHandler(this.btnSaveUser_Click);
+            this.btnUpdate.BackColor = System.Drawing.Color.IndianRed;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Location = new System.Drawing.Point(406, 340);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(135, 36);
+            this.btnUpdate.TabIndex = 42;
+            this.btnUpdate.Text = "Modificar";
+            this.btnUpdate.UseVisualStyleBackColor = false;
             // 
             // dateTimeFecha
             // 
+            this.dateTimeFecha.Enabled = false;
             this.dateTimeFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimeFecha.Location = new System.Drawing.Point(477, 293);
-            this.dateTimeFecha.MaxDate = new System.DateTime(2021, 7, 30, 0, 0, 0, 0);
             this.dateTimeFecha.Name = "dateTimeFecha";
             this.dateTimeFecha.Size = new System.Drawing.Size(200, 20);
             this.dateTimeFecha.TabIndex = 43;
-            this.dateTimeFecha.Value = new System.DateTime(2021, 7, 30, 0, 0, 0, 0);
-            // 
-            // validacion
-            // 
-            this.validacion.ContainerControl = this;
             // 
             // circularPictureBox1
             // 
@@ -357,14 +337,29 @@
             this.circularPictureBox1.TabIndex = 3;
             this.circularPictureBox1.TabStop = false;
             // 
-            // FrmAgregarPaciente
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Gray;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(254, 340);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(135, 36);
+            this.btnCancelar.TabIndex = 44;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
+            // 
+            // FrmEliminarPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(747, 409);
-            this.Controls.Add(this.dateTimeFecha);
-            this.Controls.Add(this.btnSaveUser);
             this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.dateTimeFecha);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txtEdad);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
@@ -387,9 +382,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmAgregarPaciente";
+            this.Name = "FrmEliminarPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmAgregarPaciente";
+            this.Text = "FrmEliminarPaciente";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
@@ -399,7 +394,6 @@
         }
 
         #endregion
-
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
@@ -423,9 +417,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtEdad;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnSaveUser;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DateTimePicker dateTimeFecha;
-        private DevComponents.DotNetBar.Validator.Highlighter validacion;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

@@ -119,6 +119,18 @@
     <Compile Include="Pacientes\FrmDetallesPaciente.Designer.cs">
       <DependentUpon>FrmDetallesPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pacientes\FrmEliminarPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pacientes\FrmEliminarPaciente.Designer.cs">
+      <DependentUpon>FrmEliminarPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pacientes\FrmModificarPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pacientes\FrmModificarPaciente.Designer.cs">
+      <DependentUpon>FrmModificarPaciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario\FrmAgregarUsuario.cs">
@@ -174,6 +186,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pacientes\FrmDetallesPaciente.resx">
       <DependentUpon>FrmDetallesPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pacientes\FrmEliminarPaciente.resx">
+      <DependentUpon>FrmEliminarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pacientes\FrmModificarPaciente.resx">
+      <DependentUpon>FrmModificarPaciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

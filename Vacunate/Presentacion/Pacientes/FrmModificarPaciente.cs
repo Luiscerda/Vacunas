@@ -12,31 +12,31 @@ using System.Windows.Forms;
 
 namespace Presentacion.Pacientes
 {
-    public partial class FrmDetallesPaciente : Form
+    public partial class FrmModificarPaciente : Form
     {
-        public FrmDetallesPaciente(Patient patient)
+        public FrmModificarPaciente(Patient patient)
         {
             InitializeComponent();
-            LoadDetails(patient);
+            LoadPatient(patient);
         }
 
-        private void LoadDetails(Patient patient)
+        private void LoadPatient(Patient patient)
         {
-            txtIdentificacion.Text = patient.Identification;
             txtEdad.Text = patient.Age.ToString();
             txtEmail.Text = patient.Mail;
             txtFirstName.Text = patient.FirstName;
             txtLastName.Text = patient.LastName;
+            txtIdentificacion.Text = patient.Identification;
+            txtTelephone.Text = patient.Telephone;
             cmbTiposDoc.Text = patient.TipoDoc;
             dateTimeFecha.Text = patient.DateOfBirth.ToString();
-            txtTelephone.Text = patient.Telephone;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

@@ -173,5 +173,17 @@ namespace Presentacion.Pacientes
             cmbTiposDoc.Items.Add("Cedula Ciudadania");
             cmbTiposDoc.Items.Add("Cedula Extranjera");
         }
+
+        private void cmbTiposDoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(cmbTiposDoc.Text))
+            {
+                validacion.SetHighlightColor(cmbTiposDoc, DevComponents.DotNetBar.Validator.eHighlightColor.Red);
+            }
+            else
+            {
+                validacion.SetHighlightColor(cmbTiposDoc, DevComponents.DotNetBar.Validator.eHighlightColor.None);
+            }
+        }
     }
 }

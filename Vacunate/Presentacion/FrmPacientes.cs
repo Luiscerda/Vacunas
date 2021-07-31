@@ -61,7 +61,6 @@ namespace Presentacion
 
             return tabla;
         }
-
         private void btnViewDetails_Click(object sender, EventArgs e)
         {
             Int32 selectedColumnCount = GridPacientes.GetCellCount(DataGridViewElementStates.Selected);
@@ -77,11 +76,40 @@ namespace Presentacion
                 frmDetalles.ShowDialog();
             }
         }
-
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             FrmAgregarPaciente frmAgregar = new FrmAgregarPaciente();
             frmAgregar.ShowDialog();
+        }
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            Int32 selectedColumnCount = GridPacientes.GetCellCount(DataGridViewElementStates.Selected);
+            if (selectedColumnCount != GridPacientes.Columns.Count)
+            {
+                MessageBox.Show("Seleccione una fila", "Error");
+            }
+            else
+            {
+                var id = GridPacientes.CurrentRow.Cells[0].Value;
+                var patient = patientsModel.GetPatient(id.ToString());
+                FrmModificarPaciente frmModificar = new FrmModificarPaciente(patient);
+                frmModificar.ShowDialog();
+            }
+        }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Int32 selectedColumnCount = GridPacientes.GetCellCount(DataGridViewElementStates.Selected);
+            if (selectedColumnCount != GridPacientes.Columns.Count)
+            {
+                MessageBox.Show("Seleccione una fila", "Error");
+            }
+            else
+            {
+                var id = GridPacientes.CurrentRow.Cells[0].Value;
+                var patient = patientsModel.GetPatient(id.ToString());
+                FrmEliminarPaciente frmEliminar = new FrmEliminarPaciente(patient);
+                frmEliminar.ShowDialog();
+            }
         }
     }
 }
