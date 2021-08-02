@@ -169,6 +169,11 @@ namespace Presentacion
             AbrirFormularios(new FrmEmpleados());
         }
 
+        private void btnVacunas_Click(object sender, EventArgs e)
+        {
+            AbrirFormularios(new FrmVacunas());
+        }
+
         private void LoadUserData()
         {
             labelRol.Text = UserLoginCache.Rol;

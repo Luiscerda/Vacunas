@@ -106,7 +106,6 @@ namespace Presentacion.Pacientes
                 validacion.SetHighlightColor(txtIdentificacion, DevComponents.DotNetBar.Validator.eHighlightColor.None);
             }
         }
-
         private void txtFirstName_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtFirstName.Text))
@@ -118,7 +117,6 @@ namespace Presentacion.Pacientes
                 validacion.SetHighlightColor(txtFirstName, DevComponents.DotNetBar.Validator.eHighlightColor.None);
             }
         }
-
         private void txtLastName_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtLastName.Text))
@@ -130,7 +128,6 @@ namespace Presentacion.Pacientes
                 validacion.SetHighlightColor(txtLastName, DevComponents.DotNetBar.Validator.eHighlightColor.None);
             }
         }
-
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtEmail.Text))
@@ -142,7 +139,6 @@ namespace Presentacion.Pacientes
                 validacion.SetHighlightColor(txtEmail, DevComponents.DotNetBar.Validator.eHighlightColor.None);
             }
         }
-
         private void txtTelephone_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtTelephone.Text))
@@ -154,7 +150,6 @@ namespace Presentacion.Pacientes
                 validacion.SetHighlightColor(txtTelephone, DevComponents.DotNetBar.Validator.eHighlightColor.None);
             }
         }
-
         private void txtEdad_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtEdad.Text))
@@ -173,7 +168,6 @@ namespace Presentacion.Pacientes
             cmbTiposDoc.Items.Add("Cedula Ciudadania");
             cmbTiposDoc.Items.Add("Cedula Extranjera");
         }
-
         private void cmbTiposDoc_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(cmbTiposDoc.Text))

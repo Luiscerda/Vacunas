@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain;
+using Presentacion.Usuario;
 
 namespace Presentacion
 {
@@ -134,8 +135,17 @@ namespace Presentacion
                             this.Hide();
                             FrmBienvenida bienvenida = new FrmBienvenida();
                             bienvenida.ShowDialog();
-                            FrmPrincipal principal = new FrmPrincipal();
-                            principal.Show();
+                            if (rol == "F")
+                            {
+                                FrmPrincipal principal = new FrmPrincipal();
+                                principal.Show();
+                            }
+                            else
+                            {
+                                FrmPrincipalPaciente principalPaciente = new FrmPrincipalPaciente();
+                                principalPaciente.Show();
+                            }
+                            
 
                         }
                         else

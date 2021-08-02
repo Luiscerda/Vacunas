@@ -59,6 +59,12 @@
     <Compile Include="Controles\CircularPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Empleados\FrmAgregarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleados\FrmAgregarEmpleado.Designer.cs">
+      <DependentUpon>FrmAgregarEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBienvenida.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,12 @@
     <Compile Include="FrmUsuarios.Designer.cs">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVacunas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVacunas.Designer.cs">
+      <DependentUpon>FrmVacunas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pacientes\FrmAgregarPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,12 +163,39 @@
     <Compile Include="Usuario\FrmModificarUsuario.Designer.cs">
       <DependentUpon>FrmModificarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Usuario\FrmPrincipalPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\FrmPrincipalPaciente.Designer.cs">
+      <DependentUpon>FrmPrincipalPaciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuario\FrmViewDetails.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Usuario\FrmViewDetails.Designer.cs">
       <DependentUpon>FrmViewDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vacunas\FrmAddVacunas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vacunas\FrmAddVacunas.Designer.cs">
+      <DependentUpon>FrmAddVacunas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vacunas\FrmUpdateVacuna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vacunas\FrmUpdateVacuna.Designer.cs">
+      <DependentUpon>FrmUpdateVacuna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vacunas\FrmViewDetailsVacuna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vacunas\FrmViewDetailsVacuna.Designer.cs">
+      <DependentUpon>FrmViewDetailsVacuna.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Empleados\FrmAgregarEmpleado.resx">
+      <DependentUpon>FrmAgregarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBienvenida.resx">
       <DependentUpon>FrmBienvenida.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVacunas.resx">
+      <DependentUpon>FrmVacunas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pacientes\FrmAgregarPaciente.resx">
       <DependentUpon>FrmAgregarPaciente.cs</DependentUpon>
@@ -212,8 +254,20 @@
     <EmbeddedResource Include="Usuario\FrmModificarUsuario.resx">
       <DependentUpon>FrmModificarUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\FrmPrincipalPaciente.resx">
+      <DependentUpon>FrmPrincipalPaciente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuario\FrmViewDetails.resx">
       <DependentUpon>FrmViewDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vacunas\FrmAddVacunas.resx">
+      <DependentUpon>FrmAddVacunas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vacunas\FrmUpdateVacuna.resx">
+      <DependentUpon>FrmUpdateVacuna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vacunas\FrmViewDetailsVacuna.resx">
+      <DependentUpon>FrmViewDetailsVacuna.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -245,5 +299,6 @@
       <Name>Domain</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
