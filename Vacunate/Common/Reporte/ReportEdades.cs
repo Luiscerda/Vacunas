@@ -8,9 +8,8 @@ namespace Common.Reporte
 {
     public class ReportEdades
     {
-        public int Menor18 { get; set; }
-        public int De18_24 { get; set; }
-        public int De25_34 { get; set; }
-        public int De35_44 { get; set; }
+        public int Edad { get; set; }
+        public int Cantidad { get; set; }
+        public string Rango { get; set; }
     }
 }

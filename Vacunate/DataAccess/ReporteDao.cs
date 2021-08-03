@@ -43,5 +43,37 @@ namespace DataAccess
                 }
             }
         }
+
+        public List<ReportEdades> GetReportEdades()
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                List<ReportEdades> reportEdades = new List<ReportEdades>();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "Edad";
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            ReportEdades edad = new ReportEdades();
+                            edad.Edad = reader.GetInt32(0);
+                            edad.Cantidad = reader.GetInt32(1);
+
+                            reportEdades.Add(edad);
+                        }
+                        return reportEdades;
+                    }
+                    else
+                    {
+                        return reportEdades;
+                    }
+                }
+            }
+        }
     }
 }

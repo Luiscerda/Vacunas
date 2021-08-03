@@ -19,5 +19,9 @@ namespace Domain
         {
             return reporteDao.GetReportEstados();
         }
+        public List<ReportEdades> GetReportEdades()
+        {
+            return reporteDao.GetReportEdades();
+        }
     }
 }

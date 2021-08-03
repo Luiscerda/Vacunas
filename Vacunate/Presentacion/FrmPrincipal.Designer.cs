@@ -145,7 +145,7 @@
             this.btnGraficas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnGraficas.Size = new System.Drawing.Size(250, 45);
             this.btnGraficas.TabIndex = 9;
-            this.btnGraficas.Text = "Reportes";
+            this.btnGraficas.Text = "Graficas";
             this.btnGraficas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGraficas.UseVisualStyleBackColor = true;
             this.btnGraficas.Click += new System.EventHandler(this.btnGraficas_Click);
