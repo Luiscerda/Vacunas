@@ -60,7 +60,7 @@ namespace Presentacion.Pacientes.Solicitud
             if (validated)
             {
                 string mensaje = solicitudModel.SaveSolicitud(solicitud);
-                MessageBox.Show(mensaje,"Mensaje");
+                MessageBox.Show(mensaje,"Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         private bool ValidatedFields(Common.Solicitud solicitud)

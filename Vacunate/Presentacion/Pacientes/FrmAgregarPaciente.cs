@@ -50,7 +50,7 @@ namespace Presentacion.Pacientes
             if (validated)
             {
                 string mensaje = patientsModel.SavePatient(patient);
-                MessageBox.Show(mensaje, "Mensaje");
+                MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
         }

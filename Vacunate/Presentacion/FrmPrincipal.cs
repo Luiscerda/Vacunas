@@ -59,7 +59,9 @@ namespace Presentacion
         }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("¿Estás seguro de salir de la aplicacion?", "Advertencia",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                Application.Exit();
         }
         int lx, ly;
         int sw, sh;
@@ -177,6 +179,18 @@ namespace Presentacion
         private void btnSolicitudes_Click(object sender, EventArgs e)
         {
             AbrirFormularios(new FrmSolicitudes());
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Estás seguro de cerrar sesión?", "Advertencia",
+           MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                this.Close();
+        }
+
+        private void btnGraficas_Click(object sender, EventArgs e)
+        {
+            AbrirFormularios(new FrmReportes());
         }
 
         private void LoadUserData()

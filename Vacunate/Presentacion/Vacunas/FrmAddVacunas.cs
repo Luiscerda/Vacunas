@@ -188,7 +188,7 @@ namespace Presentacion.Vacunas
             if (validacion)
             {
                 string mensaje = vacunaModel.SaveVacuna(vacunaMapeada);
-                MessageBox.Show(mensaje,"Mensaje");
+                MessageBox.Show(mensaje,"Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
         }

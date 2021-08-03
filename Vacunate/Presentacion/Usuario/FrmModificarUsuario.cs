@@ -54,7 +54,7 @@ namespace Presentacion.Usuario
             if (validar)
             {
                 string mensaje = userModel.UpdateUser(_user);
-                MessageBox.Show(mensaje, "Mensaje");
+                MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
         }

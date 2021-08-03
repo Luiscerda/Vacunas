@@ -32,7 +32,6 @@ namespace DataAccess
                 }
             }
         }
-
         public Solicitud GetSolicitudEstado(string identificacion)
         {
             using (var connection = GetConnection())
@@ -67,7 +66,6 @@ namespace DataAccess
                 }
             }
         }
-
         public List<Solicitud> GetSolicitudes(string identificacionPaciente)
         {
             using (var connection = GetConnection())
@@ -170,7 +168,6 @@ namespace DataAccess
                 }
             }
         }
-
         public void UpdateEstadoSolicitud(string codigo,string estado)
         {
             using (var connection = GetConnection())

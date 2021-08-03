@@ -136,7 +136,7 @@
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(259, 39);
             this.btnLogin.TabIndex = 0;
-            this.btnLogin.Text = "Log In";
+            this.btnLogin.Text = "Iniciar Sesion";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             this.btnLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.button1_Paint);
@@ -189,12 +189,12 @@
             this.linkLabelRecuperarContraseña.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelRecuperarContraseña.ForeColor = System.Drawing.Color.Black;
             this.linkLabelRecuperarContraseña.LinkColor = System.Drawing.Color.Black;
-            this.linkLabelRecuperarContraseña.Location = new System.Drawing.Point(92, 514);
+            this.linkLabelRecuperarContraseña.Location = new System.Drawing.Point(58, 514);
             this.linkLabelRecuperarContraseña.Name = "linkLabelRecuperarContraseña";
-            this.linkLabelRecuperarContraseña.Size = new System.Drawing.Size(140, 20);
+            this.linkLabelRecuperarContraseña.Size = new System.Drawing.Size(220, 20);
             this.linkLabelRecuperarContraseña.TabIndex = 9;
             this.linkLabelRecuperarContraseña.TabStop = true;
-            this.linkLabelRecuperarContraseña.Text = "Forgot password?";
+            this.linkLabelRecuperarContraseña.Text = "Has olvidado tu contraseña?";
             this.linkLabelRecuperarContraseña.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelRecuperarContraseña_LinkClicked);
             // 
             // labelErrorMessage

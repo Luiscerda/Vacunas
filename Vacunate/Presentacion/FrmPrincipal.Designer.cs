@@ -32,35 +32,37 @@
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.panelFormularios = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnGraficas = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnSolicitudes = new System.Windows.Forms.Button();
             this.btnVacunas = new System.Windows.Forms.Button();
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.circularPictureBox1 = new Presentacion.Controles.CircularPictureBox();
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelFirst = new System.Windows.Forms.Label();
             this.labelRol = new System.Windows.Forms.Label();
             this.btnPacientes = new System.Windows.Forms.Button();
             this.btnUsers = new System.Windows.Forms.Button();
-            this.panelBarraTitulo = new System.Windows.Forms.Panel();
-            this.btnSolicitudes = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureLogo = new System.Windows.Forms.PictureBox();
+            this.panelBarraTitulo = new System.Windows.Forms.Panel();
             this.btnRestaurar = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.circularPictureBox1 = new Presentacion.Controles.CircularPictureBox();
             this.panelContenedor.SuspendLayout();
             this.panelFormularios.SuspendLayout();
-            this.panelMenu.SuspendLayout();
-            this.panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
+            this.panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelContenedor
@@ -91,16 +93,29 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(128)))), ((int)(((byte)(188)))));
             this.label1.Location = new System.Drawing.Point(298, 337);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "VACUNATE";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(239, 150);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(226, 218);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.btnGraficas);
+            this.panelMenu.Controls.Add(this.btnLogout);
             this.panelMenu.Controls.Add(this.btnSolicitudes);
             this.panelMenu.Controls.Add(this.btnVacunas);
             this.panelMenu.Controls.Add(this.btnEmpleados);
@@ -117,6 +132,57 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(250, 600);
             this.panelMenu.TabIndex = 1;
+            // 
+            // btnGraficas
+            // 
+            this.btnGraficas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGraficas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGraficas.FlatAppearance.BorderSize = 0;
+            this.btnGraficas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGraficas.ForeColor = System.Drawing.Color.Silver;
+            this.btnGraficas.Location = new System.Drawing.Point(0, 368);
+            this.btnGraficas.Name = "btnGraficas";
+            this.btnGraficas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnGraficas.Size = new System.Drawing.Size(250, 45);
+            this.btnGraficas.TabIndex = 9;
+            this.btnGraficas.Text = "Reportes";
+            this.btnGraficas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGraficas.UseVisualStyleBackColor = true;
+            this.btnGraficas.Click += new System.EventHandler(this.btnGraficas_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.ForeColor = System.Drawing.Color.Silver;
+            this.btnLogout.Location = new System.Drawing.Point(0, 555);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnLogout.Size = new System.Drawing.Size(250, 45);
+            this.btnLogout.TabIndex = 8;
+            this.btnLogout.Text = "Cerrar Sesion";
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnSolicitudes
+            // 
+            this.btnSolicitudes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSolicitudes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSolicitudes.FlatAppearance.BorderSize = 0;
+            this.btnSolicitudes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSolicitudes.ForeColor = System.Drawing.Color.Silver;
+            this.btnSolicitudes.Location = new System.Drawing.Point(0, 323);
+            this.btnSolicitudes.Name = "btnSolicitudes";
+            this.btnSolicitudes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnSolicitudes.Size = new System.Drawing.Size(250, 45);
+            this.btnSolicitudes.TabIndex = 7;
+            this.btnSolicitudes.Text = "Solicitudes";
+            this.btnSolicitudes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSolicitudes.UseVisualStyleBackColor = true;
+            this.btnSolicitudes.Click += new System.EventHandler(this.btnSolicitudes_Click);
             // 
             // btnVacunas
             // 
@@ -156,11 +222,27 @@
             this.linkLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
             this.linkLabel1.Location = new System.Drawing.Point(16, 122);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(60, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(49, 13);
             this.linkLabel1.TabIndex = 2;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Editar Perfil";
+            this.linkLabel1.Text = "Ver Perfil";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // circularPictureBox1
+            // 
+            this.circularPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
+            this.circularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.circularPictureBox1.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.circularPictureBox1.BorderColor2 = System.Drawing.SystemColors.ButtonShadow;
+            this.circularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.circularPictureBox1.BorderSize = 1;
+            this.circularPictureBox1.GradientAngle = 50F;
+            this.circularPictureBox1.Location = new System.Drawing.Point(4, 27);
+            this.circularPictureBox1.Name = "circularPictureBox1";
+            this.circularPictureBox1.Size = new System.Drawing.Size(88, 88);
+            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.circularPictureBox1.TabIndex = 2;
+            this.circularPictureBox1.TabStop = false;
             // 
             // labelEmail
             // 
@@ -228,6 +310,16 @@
             this.btnUsers.UseVisualStyleBackColor = true;
             this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
+            // pictureLogo
+            // 
+            this.pictureLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
+            this.pictureLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureLogo.Location = new System.Drawing.Point(0, 0);
+            this.pictureLogo.Name = "pictureLogo";
+            this.pictureLogo.Size = new System.Drawing.Size(250, 143);
+            this.pictureLogo.TabIndex = 0;
+            this.pictureLogo.TabStop = false;
+            // 
             // panelBarraTitulo
             // 
             this.panelBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(142)))));
@@ -241,44 +333,6 @@
             this.panelBarraTitulo.Size = new System.Drawing.Size(950, 40);
             this.panelBarraTitulo.TabIndex = 0;
             this.panelBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseMove);
-            // 
-            // btnSolicitudes
-            // 
-            this.btnSolicitudes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSolicitudes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSolicitudes.FlatAppearance.BorderSize = 0;
-            this.btnSolicitudes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSolicitudes.ForeColor = System.Drawing.Color.Silver;
-            this.btnSolicitudes.Location = new System.Drawing.Point(0, 323);
-            this.btnSolicitudes.Name = "btnSolicitudes";
-            this.btnSolicitudes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnSolicitudes.Size = new System.Drawing.Size(250, 45);
-            this.btnSolicitudes.TabIndex = 7;
-            this.btnSolicitudes.Text = "Solicitudes";
-            this.btnSolicitudes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSolicitudes.UseVisualStyleBackColor = true;
-            this.btnSolicitudes.Click += new System.EventHandler(this.btnSolicitudes_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(239, 150);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(226, 218);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureLogo
-            // 
-            this.pictureLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
-            this.pictureLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureLogo.Location = new System.Drawing.Point(0, 0);
-            this.pictureLogo.Name = "pictureLogo";
-            this.pictureLogo.Size = new System.Drawing.Size(250, 143);
-            this.pictureLogo.TabIndex = 0;
-            this.pictureLogo.TabStop = false;
             // 
             // btnRestaurar
             // 
@@ -333,22 +387,6 @@
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // circularPictureBox1
-            // 
-            this.circularPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
-            this.circularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.circularPictureBox1.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-            this.circularPictureBox1.BorderColor2 = System.Drawing.SystemColors.ButtonShadow;
-            this.circularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.circularPictureBox1.BorderSize = 1;
-            this.circularPictureBox1.GradientAngle = 50F;
-            this.circularPictureBox1.Location = new System.Drawing.Point(4, 27);
-            this.circularPictureBox1.Name = "circularPictureBox1";
-            this.circularPictureBox1.Size = new System.Drawing.Size(88, 88);
-            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.circularPictureBox1.TabIndex = 2;
-            this.circularPictureBox1.TabStop = false;
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,16 +401,16 @@
             this.panelContenedor.ResumeLayout(false);
             this.panelFormularios.ResumeLayout(false);
             this.panelFormularios.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
-            this.panelBarraTitulo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).EndInit();
+            this.panelBarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -400,5 +438,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnSolicitudes;
+        private System.Windows.Forms.Button btnGraficas;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

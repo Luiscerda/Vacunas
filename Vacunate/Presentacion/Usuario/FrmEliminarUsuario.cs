@@ -45,7 +45,7 @@ namespace Presentacion.Usuario
         private void btnDelete_Click(object sender, EventArgs e)
         {
             string mensaje = userModel.DeleteUser(id);
-            MessageBox.Show(mensaje,"Mensaje");
+            MessageBox.Show(mensaje,"Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
     }

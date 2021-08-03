@@ -53,7 +53,9 @@ namespace Presentacion.Usuario
         }
         private void btnCerrar_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("¿Estás seguro de salir de la aplicacion?", "Advertencia",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                Application.Exit();
         }
         private void panelBarraTitulo_MouseDown(object sender, MouseEventArgs e)
         {
@@ -111,6 +113,13 @@ namespace Presentacion.Usuario
         private void linkLabelEditProfile_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             AbrirFormularios(new FrmEditarPerfil());
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Estás seguro de cerrar sesión?", "Advertencia",
+           MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                this.Close();
         }
 
         private void AbrirFormularios(Form formularioHijo)

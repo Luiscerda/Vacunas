@@ -44,6 +44,8 @@
     <Compile Include="Cache\Roles.cs" />
     <Compile Include="Cache\UserLoginCache.cs" />
     <Compile Include="Patient.cs" />
+    <Compile Include="Reporte\ReportEdades.cs" />
+    <Compile Include="Reporte\ReportEstado.cs" />
     <Compile Include="Solicitud.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

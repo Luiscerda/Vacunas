@@ -59,7 +59,7 @@ namespace Presentacion.Pacientes
             if (validar)
             {
                 string mensaje = patientsModel.UpdatePatient(_patient);
-                MessageBox.Show(mensaje, "Mensaje");
+                MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
         }

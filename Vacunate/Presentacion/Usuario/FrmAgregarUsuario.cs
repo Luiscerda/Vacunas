@@ -40,7 +40,7 @@ namespace Presentacion.Usuario
             if (validar == "Prosiga")
             {
                 string mensaje = userModel.SaveUser(user);
-                MessageBox.Show(mensaje, "Mensaje");
+                MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearField();
             }
             else

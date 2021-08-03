@@ -48,7 +48,7 @@ namespace Presentacion
         private void btnRechazar_Click(object sender, EventArgs e)
         {
             string mensaje = solicitudModel.UpdateEstadoSolicitud(txtCodigoSolicitud.Text, "Rechazada");
-            MessageBox.Show(mensaje,"Mensaje");
+            MessageBox.Show(mensaje,"Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace Presentacion
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             string mensaje = solicitudModel.UpdateEstadoSolicitud(txtCodigoSolicitud.Text, "Aceptada");
-            MessageBox.Show(mensaje, "Mensaje");
+            MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
     }

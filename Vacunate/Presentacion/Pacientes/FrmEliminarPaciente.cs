@@ -45,7 +45,7 @@ namespace Presentacion.Pacientes
         private void btnDelete_Click(object sender, EventArgs e)
         {
             string mensaje = patientsModel.DeletePatient(identificacionEliminar);
-            MessageBox.Show(mensaje,"Mensaje");
+            MessageBox.Show(mensaje,"Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
     }

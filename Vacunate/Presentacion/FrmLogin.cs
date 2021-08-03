@@ -139,11 +139,14 @@ namespace Presentacion
                             {
                                 FrmPrincipal principal = new FrmPrincipal();
                                 principal.Show();
+                                principal.FormClosed += Logout;
+                                this.Hide();
                             }
                             else
                             {
                                 FrmPrincipalPaciente principalPaciente = new FrmPrincipalPaciente();
                                 principalPaciente.Show();
+                                principalPaciente.FormClosed += Logout;
                             }
                             
 
@@ -177,6 +180,14 @@ namespace Presentacion
         {
             var recoveryPassword = new FrmRecuperarContraseña();
             recoveryPassword.ShowDialog();
+        }
+        private void Logout(object sender, FormClosedEventArgs e)
+        {
+            txtPassword.Text = "Contraseña";
+            txtPassword.UseSystemPasswordChar = false;
+            txtUserName.Text = "Usuario";
+            labelErrorMessage.Visible = false;
+            this.Show();
         }
     }
 }
