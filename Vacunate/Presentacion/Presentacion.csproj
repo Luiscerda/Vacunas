@@ -101,11 +101,23 @@
     <Compile Include="FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRecibirSolicitud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRecibirSolicitud.Designer.cs">
+      <DependentUpon>FrmRecibirSolicitud.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRecuperarContraseña.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmRecuperarContraseña.Designer.cs">
       <DependentUpon>FrmRecuperarContraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSolicitudes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSolicitudes.Designer.cs">
+      <DependentUpon>FrmSolicitudes.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmUsuarios.cs">
       <SubType>Form</SubType>
@@ -226,8 +238,14 @@
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmRecibirSolicitud.resx">
+      <DependentUpon>FrmRecibirSolicitud.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmRecuperarContraseña.resx">
       <DependentUpon>FrmRecuperarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSolicitudes.resx">
+      <DependentUpon>FrmSolicitudes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>

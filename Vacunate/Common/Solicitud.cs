@@ -18,5 +18,6 @@ namespace Common
         public int UserReg { get; set; }
         public DateTime FechaSolicitud { get; set; }
         public string Estado { get; set; }
+        public string NombreVacuna { get; set; }
     }
 }

@@ -40,7 +40,7 @@ namespace DataAccess.MailServices
                 mailMessage.Priority = MailPriority.Normal;
                 smtpClient.Send(mailMessage);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

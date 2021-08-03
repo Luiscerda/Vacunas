@@ -39,5 +39,35 @@ namespace Domain
         {
             return solicitudDao.GetSolicitudes(identificacionPaciente);
         }
+        public List<Solicitud> GetSolicitudes()
+        {
+            return solicitudDao.GetSolicitudes();
+        }
+
+        public Solicitud GetSolicitudByCodigo(string codigo)
+        {
+            return solicitudDao.GetSolicitudByCodigo(codigo);
+        }
+        public string UpdateEstadoSolicitud(string codigo, string estado)
+        {
+            try
+            {
+                solicitudDao.UpdateEstadoSolicitud(codigo, estado);
+                if (estado.Trim() == "Rechazada")
+                {
+                    return "Solicitud rechazada";
+                }
+                else
+                {
+                    return "Solicitud aprobada";
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                return "Error: " + ex.Message;
+            }
+           
+        }
     }
 }

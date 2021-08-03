@@ -102,5 +102,90 @@ namespace DataAccess
                 }
             }
         }
+        public List<Solicitud> GetSolicitudes()
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                List<Solicitud> solicituds = new List<Solicitud>();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "Select * from Solicitudes";
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Solicitud solicitud = new Solicitud();
+                            solicitud.Codigo = reader.GetString(1);
+                            solicitud.IdentificacionPaciente = reader.GetString(3);
+                            solicitud.FechaSolicitud = reader.GetDateTime(5);
+                            solicitud.Estado = reader.GetString(4);
+                            solicitud.CodigoVacuna = reader.GetString(2);
+
+                            solicituds.Add(solicitud);
+                        }
+                        return solicituds;
+                    }
+                    else
+                    {
+                        return solicituds;
+                    }
+                }
+            }
+        }
+        public Solicitud GetSolicitudByCodigo(string codigo)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                Solicitud solicitud = new Solicitud();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "Select * from Solicitudes where Codigo=@codigo";
+                    command.Parameters.AddWithValue("@codigo", codigo);
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            solicitud.Codigo = reader.GetString(1);
+                            solicitud.CodigoVacuna = reader.GetString(2);
+                            solicitud.IdentificacionPaciente = reader.GetString(3);
+                            solicitud.Estado = reader.GetString(4);
+                            solicitud.FechaSolicitud = reader.GetDateTime(5);
+                            solicitud.UserReg = reader.GetInt32(7);
+
+                        }
+                        return solicitud;
+                    }
+                    else
+                    {
+                        return solicitud;
+                    }
+                }
+            }
+        }
+
+        public void UpdateEstadoSolicitud(string codigo,string estado)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "Update  Solicitudes set Estado=@estado where Codigo=@codigo";
+                    command.Parameters.AddWithValue("@codigo", codigo);
+                    command.Parameters.AddWithValue("@estado", estado);
+                    command.CommandType = CommandType.Text;
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
