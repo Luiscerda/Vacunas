@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PatientsModel.cs" />
+    <Compile Include="SolicitudModel.cs" />
     <Compile Include="UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VacunaModel.cs" />

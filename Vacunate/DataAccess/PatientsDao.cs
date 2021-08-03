@@ -43,8 +43,8 @@ namespace DataAccess
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "Insert Into Pacients (FirstName,LastName,Age,Telephone,Email,DateOfBirth,Identification,TipoDoc,UserReg,FechaReg,Password) values" +
-                        "(@firstName,@lastName,@age,@telephone,@mail,@dateOfBirth,@identification,@tipoDoc,@userReg,@fechaReg,@password)";
+                    command.CommandText = "Insert Into Pacients (FirstName,LastName,Age,Telephone,Email,DateOfBirth,Identification,TipoDoc,UserReg,FechaReg,Password,Patologia) values" +
+                        "(@firstName,@lastName,@age,@telephone,@mail,@dateOfBirth,@identification,@tipoDoc,@userReg,@fechaReg,@password,@patologia)";
                     command.Parameters.AddWithValue("@firstName", patient.FirstName);
                     command.Parameters.AddWithValue("@lastName", patient.LastName);
                     command.Parameters.AddWithValue("@age", patient.Age);
@@ -56,6 +56,7 @@ namespace DataAccess
                     command.Parameters.AddWithValue("@userReg", patient.UserReg);
                     command.Parameters.AddWithValue("@fechaReg", patient.FechaReg);
                     command.Parameters.AddWithValue("@password", patient.Password);
+                    command.Parameters.AddWithValue("@patologia", patient.Patologia);
                     command.CommandType = CommandType.Text;
                     command.ExecuteNonQuery();
                 }
@@ -86,6 +87,7 @@ namespace DataAccess
                             patient.DateOfBirth = reader.GetDateTime(5);
                             patient.Identification = reader.GetString(6);
                             patient.Age = reader.GetInt32(7);
+                            patient.Patologia = reader.GetString(15);
 
                             patients.Add(patient);
                         }
@@ -121,6 +123,7 @@ namespace DataAccess
                             UserLoginCache.LastName = reader.GetString(2);
                             UserLoginCache.Email = reader.GetString(3);
                             UserLoginCache.Rol = "Paciente";
+                            UserLoginCache.Identificacion = reader.GetString(6);
                         }
                         return true;
                     }
@@ -156,7 +159,7 @@ namespace DataAccess
                             patient.Identification = reader.GetString(6);
                             patient.Age = reader.GetInt32(7);
                             patient.TipoDoc = reader.GetString(9);
-
+                            patient.Patologia = reader.GetString(15);
                         }
                         return patient;
                     }

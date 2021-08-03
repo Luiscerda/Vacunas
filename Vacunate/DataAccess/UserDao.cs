@@ -35,6 +35,7 @@ namespace DataAccess
                             UserLoginCache.LastName = reader.GetString(4);
                             UserLoginCache.Email = reader.GetString(5);
                             UserLoginCache.Rol = reader.GetString(6);
+                            UserLoginCache.Identificacion = reader.GetString(7);
                         }
                         return true;
                     }

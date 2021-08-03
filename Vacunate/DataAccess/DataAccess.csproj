@@ -46,6 +46,7 @@
     <Compile Include="MailServices\SystemSupportMail.cs" />
     <Compile Include="PatientsDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SolicitudDao.cs" />
     <Compile Include="UserDao.cs" />
     <Compile Include="VacunaDao.cs" />
   </ItemGroup>

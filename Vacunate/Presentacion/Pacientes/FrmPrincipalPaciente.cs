@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Common.Cache;
+using Presentacion.Pacientes;
 
 namespace Presentacion.Usuario
 {
@@ -128,7 +129,7 @@ namespace Presentacion.Usuario
 
         private void btnSolicitarVacuna_Click(object sender, EventArgs e)
         {
-            AbrirFormularios(new FrmPacientes());
+            AbrirFormularios(new FrmSolicitarVacuna());
         }
     }
 }

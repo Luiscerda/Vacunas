@@ -22,5 +22,6 @@ namespace Common
         public string Password { get; set; }
         public int UserMod { get; set; }
         public DateTime FechaMod { get; set; }
+        public string Patologia { get; set; }
     }
 }

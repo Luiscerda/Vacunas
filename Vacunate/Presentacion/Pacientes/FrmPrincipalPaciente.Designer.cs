@@ -32,6 +32,7 @@
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.linkLabelEditProfile = new System.Windows.Forms.LinkLabel();
+            this.circularPictureBox1 = new Presentacion.Controles.CircularPictureBox();
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelFirst = new System.Windows.Forms.Label();
             this.labelRol = new System.Windows.Forms.Label();
@@ -46,8 +47,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelFormularios = new System.Windows.Forms.Panel();
-            this.circularPictureBox1 = new Presentacion.Controles.CircularPictureBox();
             this.panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).BeginInit();
             this.panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
@@ -56,7 +57,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelFormularios.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelContenedor
@@ -96,6 +96,22 @@
             this.linkLabelEditProfile.TabStop = true;
             this.linkLabelEditProfile.Text = "Editar Perfil";
             this.linkLabelEditProfile.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelEditProfile_LinkClicked);
+            // 
+            // circularPictureBox1
+            // 
+            this.circularPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
+            this.circularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.circularPictureBox1.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.circularPictureBox1.BorderColor2 = System.Drawing.SystemColors.ButtonShadow;
+            this.circularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.circularPictureBox1.BorderSize = 1;
+            this.circularPictureBox1.GradientAngle = 50F;
+            this.circularPictureBox1.Location = new System.Drawing.Point(4, 27);
+            this.circularPictureBox1.Name = "circularPictureBox1";
+            this.circularPictureBox1.Size = new System.Drawing.Size(88, 88);
+            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.circularPictureBox1.TabIndex = 2;
+            this.circularPictureBox1.TabStop = false;
             // 
             // labelEmail
             // 
@@ -156,7 +172,7 @@
             this.btnSolicitarVacuna.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSolicitarVacuna.Size = new System.Drawing.Size(250, 45);
             this.btnSolicitarVacuna.TabIndex = 0;
-            this.btnSolicitarVacuna.Text = "Solicitar Vacuna";
+            this.btnSolicitarVacuna.Text = "Solicitudes";
             this.btnSolicitarVacuna.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSolicitarVacuna.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSolicitarVacuna.UseVisualStyleBackColor = true;
@@ -273,22 +289,6 @@
             this.panelFormularios.Size = new System.Drawing.Size(700, 600);
             this.panelFormularios.TabIndex = 3;
             // 
-            // circularPictureBox1
-            // 
-            this.circularPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(79)))));
-            this.circularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.circularPictureBox1.BorderColor = System.Drawing.SystemColors.ActiveBorder;
-            this.circularPictureBox1.BorderColor2 = System.Drawing.SystemColors.ButtonShadow;
-            this.circularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.circularPictureBox1.BorderSize = 1;
-            this.circularPictureBox1.GradientAngle = 50F;
-            this.circularPictureBox1.Location = new System.Drawing.Point(4, 27);
-            this.circularPictureBox1.Name = "circularPictureBox1";
-            this.circularPictureBox1.Size = new System.Drawing.Size(88, 88);
-            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.circularPictureBox1.TabIndex = 2;
-            this.circularPictureBox1.TabStop = false;
-            // 
             // FrmPrincipalPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,6 +304,7 @@
             this.Text = "FrmPrincipalPaciente";
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogo)).EndInit();
             this.panelBarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).EndInit();
@@ -313,7 +314,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelFormularios.ResumeLayout(false);
             this.panelFormularios.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

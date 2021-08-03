@@ -31,7 +31,6 @@ namespace Presentacion.Pacientes
         {
             this.Close();
         }
-
         private void btnSaveUser_Click(object sender, EventArgs e)
         {
             Patient patient = new Patient();
@@ -46,6 +45,7 @@ namespace Presentacion.Pacientes
             patient.Password = patient.Identification + patient.LastName;
             patient.UserReg = UserLoginCache.IdUser;
             patient.FechaReg = DateTime.Now;
+            patient.Patologia = txtPatologia.Text;
             bool validated = ValidatedField(patient);
             if (validated)
             {
@@ -54,7 +54,6 @@ namespace Presentacion.Pacientes
                 this.Close();
             }
         }
-
         private bool ValidatedField(Patient patient)
         {
             if (string.IsNullOrEmpty(patient.TipoDoc))
@@ -87,6 +86,11 @@ namespace Presentacion.Pacientes
                 validacion.SetHighlightColor(txtTelephone, DevComponents.DotNetBar.Validator.eHighlightColor.Red);
                 return false;
             }
+            if (string.IsNullOrEmpty(patient.Patologia))
+            {
+                validacion.SetHighlightColor(txtPatologia, DevComponents.DotNetBar.Validator.eHighlightColor.Red);
+                return false;
+            }
             if (patient.Age == 0)
             {
                 validacion.SetHighlightColor(txtEdad, DevComponents.DotNetBar.Validator.eHighlightColor.Red);
@@ -94,7 +98,6 @@ namespace Presentacion.Pacientes
             }                      
             return true;
         }
-
         private void txtIdentificacion_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtIdentificacion.Text))
@@ -177,6 +180,17 @@ namespace Presentacion.Pacientes
             else
             {
                 validacion.SetHighlightColor(cmbTiposDoc, DevComponents.DotNetBar.Validator.eHighlightColor.None);
+            }
+        }
+        private void txtPatologia_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtPatologia.Text))
+            {
+                validacion.SetHighlightColor(txtPatologia, DevComponents.DotNetBar.Validator.eHighlightColor.Red);
+            }
+            else
+            {
+                validacion.SetHighlightColor(txtPatologia, DevComponents.DotNetBar.Validator.eHighlightColor.None);
             }
         }
     }

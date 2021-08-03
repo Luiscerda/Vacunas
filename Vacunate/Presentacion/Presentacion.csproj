@@ -143,6 +143,18 @@
     <Compile Include="Pacientes\FrmModificarPaciente.Designer.cs">
       <DependentUpon>FrmModificarPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pacientes\FrmSolicitarVacuna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pacientes\FrmSolicitarVacuna.Designer.cs">
+      <DependentUpon>FrmSolicitarVacuna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pacientes\Solicitudes\FrmNuevaSolicitud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pacientes\Solicitudes\FrmNuevaSolicitud.Designer.cs">
+      <DependentUpon>FrmNuevaSolicitud.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario\FrmAgregarUsuario.cs">
@@ -163,10 +175,10 @@
     <Compile Include="Usuario\FrmModificarUsuario.Designer.cs">
       <DependentUpon>FrmModificarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usuario\FrmPrincipalPaciente.cs">
+    <Compile Include="Pacientes\FrmPrincipalPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuario\FrmPrincipalPaciente.Designer.cs">
+    <Compile Include="Pacientes\FrmPrincipalPaciente.Designer.cs">
       <DependentUpon>FrmPrincipalPaciente.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario\FrmViewDetails.cs">
@@ -235,6 +247,12 @@
     <EmbeddedResource Include="Pacientes\FrmModificarPaciente.resx">
       <DependentUpon>FrmModificarPaciente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pacientes\FrmSolicitarVacuna.resx">
+      <DependentUpon>FrmSolicitarVacuna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pacientes\Solicitudes\FrmNuevaSolicitud.resx">
+      <DependentUpon>FrmNuevaSolicitud.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -254,7 +272,7 @@
     <EmbeddedResource Include="Usuario\FrmModificarUsuario.resx">
       <DependentUpon>FrmModificarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuario\FrmPrincipalPaciente.resx">
+    <EmbeddedResource Include="Pacientes\FrmPrincipalPaciente.resx">
       <DependentUpon>FrmPrincipalPaciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuario\FrmViewDetails.resx">
