@@ -29,10 +29,6 @@ namespace Presentacion.Vacunas
         {
             if (string.IsNullOrEmpty(txtCodigo.Text))
             {
-                validacion.SetHighlightColor(txtCodigo, DevComponents.DotNetBar.Validator.eHighlightColor.Red);
-            }
-            else
-            {
                 validacion.SetHighlightColor(txtCodigo, DevComponents.DotNetBar.Validator.eHighlightColor.None);
             }
         }
@@ -190,6 +186,30 @@ namespace Presentacion.Vacunas
                 string mensaje = vacunaModel.SaveVacuna(vacunaMapeada);
                 MessageBox.Show(mensaje,"Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
+            }
+        }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDosis_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtConservacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
             }
         }
     }

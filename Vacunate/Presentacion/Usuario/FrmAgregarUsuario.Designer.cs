@@ -131,6 +131,7 @@
             // 
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstName.Location = new System.Drawing.Point(477, 139);
+            this.txtFirstName.MaxLength = 40;
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(197, 21);
             this.txtFirstName.TabIndex = 5;
@@ -140,6 +141,7 @@
             // 
             this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.Location = new System.Drawing.Point(477, 185);
+            this.txtUserName.MaxLength = 10;
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(197, 21);
             this.txtUserName.TabIndex = 6;
@@ -149,6 +151,7 @@
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(477, 237);
+            this.txtPassword.MaxLength = 40;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(197, 21);
             this.txtPassword.TabIndex = 10;
@@ -159,6 +162,7 @@
             // 
             this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.Location = new System.Drawing.Point(254, 186);
+            this.txtLastName.MaxLength = 40;
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(197, 21);
             this.txtLastName.TabIndex = 9;
@@ -190,6 +194,7 @@
             // 
             this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmPassword.Location = new System.Drawing.Point(477, 293);
+            this.txtConfirmPassword.MaxLength = 40;
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.Size = new System.Drawing.Size(197, 21);
             this.txtConfirmPassword.TabIndex = 14;
@@ -329,10 +334,12 @@
             // 
             this.txtIdentificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdentificacion.Location = new System.Drawing.Point(254, 139);
+            this.txtIdentificacion.MaxLength = 10;
             this.txtIdentificacion.Name = "txtIdentificacion";
             this.txtIdentificacion.Size = new System.Drawing.Size(197, 21);
             this.txtIdentificacion.TabIndex = 24;
             this.txtIdentificacion.TextChanged += new System.EventHandler(this.txtIdentificacion_TextChanged);
+            this.txtIdentificacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdentificacion_KeyPress);
             // 
             // circularPictureBox1
             // 

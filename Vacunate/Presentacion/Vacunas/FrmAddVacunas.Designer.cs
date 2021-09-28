@@ -104,10 +104,12 @@
             // 
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.Location = new System.Drawing.Point(165, 135);
+            this.txtCodigo.MaxLength = 40;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(197, 21);
             this.txtCodigo.TabIndex = 31;
             this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // validacion
             // 
@@ -139,6 +141,7 @@
             // 
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(394, 135);
+            this.txtNombre.MaxLength = 40;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(197, 21);
             this.txtNombre.TabIndex = 39;
@@ -159,6 +162,7 @@
             // 
             this.txtLaboratorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLaboratorio.Location = new System.Drawing.Point(165, 193);
+            this.txtLaboratorio.MaxLength = 40;
             this.txtLaboratorio.Name = "txtLaboratorio";
             this.txtLaboratorio.Size = new System.Drawing.Size(197, 21);
             this.txtLaboratorio.TabIndex = 41;
@@ -179,10 +183,12 @@
             // 
             this.txtDosis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDosis.Location = new System.Drawing.Point(394, 193);
+            this.txtDosis.MaxLength = 10;
             this.txtDosis.Name = "txtDosis";
             this.txtDosis.Size = new System.Drawing.Size(197, 21);
             this.txtDosis.TabIndex = 43;
             this.txtDosis.TextChanged += new System.EventHandler(this.txtDosis_TextChanged);
+            this.txtDosis.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDosis_KeyPress);
             // 
             // label6
             // 
@@ -199,6 +205,7 @@
             // 
             this.txtClasificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClasificacion.Location = new System.Drawing.Point(165, 250);
+            this.txtClasificacion.MaxLength = 40;
             this.txtClasificacion.Name = "txtClasificacion";
             this.txtClasificacion.Size = new System.Drawing.Size(197, 21);
             this.txtClasificacion.TabIndex = 45;
@@ -219,6 +226,7 @@
             // 
             this.txtComposicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComposicion.Location = new System.Drawing.Point(394, 250);
+            this.txtComposicion.MaxLength = 40;
             this.txtComposicion.Name = "txtComposicion";
             this.txtComposicion.Size = new System.Drawing.Size(197, 21);
             this.txtComposicion.TabIndex = 47;
@@ -239,10 +247,12 @@
             // 
             this.txtConservacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConservacion.Location = new System.Drawing.Point(165, 306);
+            this.txtConservacion.MaxLength = 2;
             this.txtConservacion.Name = "txtConservacion";
             this.txtConservacion.Size = new System.Drawing.Size(145, 21);
             this.txtConservacion.TabIndex = 49;
             this.txtConservacion.TextChanged += new System.EventHandler(this.txtConservacion_TextChanged);
+            this.txtConservacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConservacion_KeyPress);
             // 
             // btnSaveVacuna
             // 

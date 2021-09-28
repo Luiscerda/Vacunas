@@ -53,6 +53,7 @@ namespace Presentacion.Usuario
         }
         public string ValidatedFields(User user,string confirmPassword)
         {
+            ValidateEmail validate = new ValidateEmail();
             if (string.IsNullOrEmpty(user.Name))
             {
                 return "Campo primer nombre obligatorio";
@@ -101,7 +102,14 @@ namespace Presentacion.Usuario
                                         }
                                         else
                                         {
-                                            return "Prosiga";
+                                            if (!validate.EmailValidate(user.Mail))
+                                            {
+                                                return "Campo sin formato de correo";
+                                            }
+                                            else
+                                            {
+                                                return "Prosiga";
+                                            }
                                         }
                                         
                                     }
@@ -160,6 +168,11 @@ namespace Presentacion.Usuario
                     validacion.SetHighlightColor(txtEmail, DevComponents.DotNetBar.Validator.eHighlightColor.Red);
                     labelConfirmPass.Visible = false;
                     break;
+                case "Campo sin formato de correo":
+                    txtEmail.BorderStyle = BorderStyle.FixedSingle;
+                    validacion.SetHighlightColor(txtEmail, DevComponents.DotNetBar.Validator.eHighlightColor.Red);
+                    labelConfirmPass.Visible = false;
+                    break;
                 case "Campo nombre usuario obligatorio":
                     txtUserName.BorderStyle = BorderStyle.FixedSingle;
                     validacion.SetHighlightColor(txtUserName, DevComponents.DotNetBar.Validator.eHighlightColor.Red);
@@ -201,6 +214,14 @@ namespace Presentacion.Usuario
         private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtIdentificacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

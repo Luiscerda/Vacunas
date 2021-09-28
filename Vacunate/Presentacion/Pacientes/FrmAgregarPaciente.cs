@@ -56,6 +56,7 @@ namespace Presentacion.Pacientes
         }
         private bool ValidatedField(Patient patient)
         {
+            ValidateEmail validate = new ValidateEmail();
             if (string.IsNullOrEmpty(patient.TipoDoc))
             {
                 validacion.SetHighlightColor(cmbTiposDoc, DevComponents.DotNetBar.Validator.eHighlightColor.Red);
@@ -77,6 +78,11 @@ namespace Presentacion.Pacientes
                 return false;
             }
             if (string.IsNullOrEmpty(patient.Mail))
+            {
+                validacion.SetHighlightColor(txtEmail, DevComponents.DotNetBar.Validator.eHighlightColor.Red);
+                return false;
+            }
+            if (!validate.EmailValidate(patient.Mail))
             {
                 validacion.SetHighlightColor(txtEmail, DevComponents.DotNetBar.Validator.eHighlightColor.Red);
                 return false;
@@ -191,6 +197,30 @@ namespace Presentacion.Pacientes
             else
             {
                 validacion.SetHighlightColor(txtPatologia, DevComponents.DotNetBar.Validator.eHighlightColor.None);
+            }
+        }
+
+        private void txtIdentificacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTelephone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
             }
         }
     }

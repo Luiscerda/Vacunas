@@ -153,10 +153,12 @@
             // 
             this.txtIdentificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdentificacion.Location = new System.Drawing.Point(477, 124);
+            this.txtIdentificacion.MaxLength = 10;
             this.txtIdentificacion.Name = "txtIdentificacion";
             this.txtIdentificacion.Size = new System.Drawing.Size(197, 21);
             this.txtIdentificacion.TabIndex = 31;
             this.txtIdentificacion.TextChanged += new System.EventHandler(this.txtIdentificacion_TextChanged);
+            this.txtIdentificacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdentificacion_KeyPress);
             // 
             // label11
             // 
@@ -193,6 +195,7 @@
             // 
             this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.Location = new System.Drawing.Point(477, 170);
+            this.txtLastName.MaxLength = 40;
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(197, 21);
             this.txtLastName.TabIndex = 27;
@@ -233,6 +236,7 @@
             // 
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstName.Location = new System.Drawing.Point(254, 171);
+            this.txtFirstName.MaxLength = 40;
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(197, 21);
             this.txtFirstName.TabIndex = 33;
@@ -264,10 +268,12 @@
             // 
             this.txtTelephone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelephone.Location = new System.Drawing.Point(477, 222);
+            this.txtTelephone.MaxLength = 10;
             this.txtTelephone.Name = "txtTelephone";
             this.txtTelephone.Size = new System.Drawing.Size(197, 21);
             this.txtTelephone.TabIndex = 36;
             this.txtTelephone.TextChanged += new System.EventHandler(this.txtTelephone_TextChanged);
+            this.txtTelephone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelephone_KeyPress);
             // 
             // label7
             // 
@@ -295,10 +301,12 @@
             // 
             this.txtEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEdad.Location = new System.Drawing.Point(254, 278);
+            this.txtEdad.MaxLength = 3;
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(197, 21);
             this.txtEdad.TabIndex = 39;
             this.txtEdad.TextChanged += new System.EventHandler(this.txtEdad_TextChanged);
+            this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
             // 
             // btnCancelar
             // 
@@ -363,6 +371,7 @@
             // 
             this.txtPatologia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPatologia.Location = new System.Drawing.Point(254, 328);
+            this.txtPatologia.MaxLength = 40;
             this.txtPatologia.Name = "txtPatologia";
             this.txtPatologia.Size = new System.Drawing.Size(197, 21);
             this.txtPatologia.TabIndex = 45;

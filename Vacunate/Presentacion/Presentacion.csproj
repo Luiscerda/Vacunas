@@ -224,6 +224,7 @@
     <Compile Include="Vacunas\FrmViewDetailsVacuna.Designer.cs">
       <DependentUpon>FrmViewDetailsVacuna.cs</DependentUpon>
     </Compile>
+    <Compile Include="ValidateEmail.cs" />
     <EmbeddedResource Include="Empleados\FrmAgregarEmpleado.resx">
       <DependentUpon>FrmAgregarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
