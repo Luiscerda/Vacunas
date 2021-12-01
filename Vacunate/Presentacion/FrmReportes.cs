@@ -21,8 +21,8 @@ namespace Presentacion
         {
             InitializeComponent();
             reportModel = new ReportModel();
-            LoadReportEstados();
             LoadReportEdades();
+            LoadReportVacunas();
         }
         
         private void LoadReportEstados()
@@ -39,37 +39,78 @@ namespace Presentacion
         }
         private void LoadReportEdades()
         {
-            List<ReportEdades> edades = reportModel.GetReportEdades();
+            ReportEdades edad = reportModel.GetReportEdades();
             ArrayList rango = new ArrayList();
             ArrayList cantidades = new ArrayList();
-            foreach (var item in edades)
+            for (int i = 0; i <= 5; i++)
             {
-                if (item.Edad < 18)
+                if (i == 0)
                 {
-                    item.Rango = "Menor 18";
+                    if (edad.Under18 != 0)
+                    {
+                        cantidades.Add(edad.Under18);
+                        rango.Add("Menor 18");
+                    }
                 }
-                else if (item.Edad >= 18 && item.Edad < 24)
+                if (i == 1)
                 {
-                    item.Rango = "Entre 18 y 24";
+                    if (edad.E18_24 != 0)
+                    {
+                        cantidades.Add(edad.E18_24);
+                        rango.Add("Entre 18 y 24");
+                    }
                 }
-                else if (item.Edad >= 24 && item.Edad < 34)
+                if (i == 2)
                 {
-                    item.Rango = "Entre 24 y 34";
+                    if (edad.E25_34 != 0)
+                    {
+                        cantidades.Add(edad.E25_34);
+                        rango.Add("Entre 25 y 34");
+                    }
+                    
                 }
-                else if (item.Edad >= 34 && item.Edad < 44)
+                if (i == 3)
                 {
-                    item.Rango = "Entre 44 y 54";
+                    if (edad.E35_44 != 0)
+                    {
+                        cantidades.Add(edad.E35_44);
+                        rango.Add("Entre 35 y 44");
+                    }
+
                 }
-                else
+                if (i == 4)
                 {
-                    item.Rango = "Mayor de 50";
+                    if (edad.E45_54 != 0)
+                    {
+                        cantidades.Add(edad.E45_54);
+                        rango.Add("Entre 45 y 54");
+                    }
+
                 }
-                rango.Add(item.Rango);
-                cantidades.Add(item.Cantidad);
+                if (i == 5)
+                {
+                    if (edad.E55 != 0)
+                    {
+                        cantidades.Add(edad.E55);
+                        rango.Add("Mayor o igual a 55");
+                    }
+
+                }
             }
             chartEdad.Series[0].Points.DataBindXY(rango, cantidades);
         }
-
+        private void LoadReportVacunas()
+        {
+            List<ReportVacunas> reportVacunas = reportModel.GetReportVacunas();
+            ArrayList vacunas = new ArrayList();
+            ArrayList cantidades = new ArrayList();
+            foreach (var item in reportVacunas)
+            {
+                vacunas.Add(item.Vacuna);
+                cantidades.Add(item.Cantidad);
+            }
+            chartEstados.Series[0].Points.DataBindXY(vacunas, cantidades);
+        }
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();

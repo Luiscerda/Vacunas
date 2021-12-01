@@ -44,12 +44,13 @@ namespace DataAccess
             }
         }
 
-        public List<ReportEdades> GetReportEdades()
+        public ReportEdades GetReportEdades()
         {
             using (var connection = GetConnection())
             {
                 connection.Open();
-                List<ReportEdades> reportEdades = new List<ReportEdades>();
+                //List<ReportEdades> reportEdades = new List<ReportEdades>();
+                ReportEdades edad = new ReportEdades();
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
@@ -60,17 +61,52 @@ namespace DataAccess
                     {
                         while (reader.Read())
                         {
-                            ReportEdades edad = new ReportEdades();
-                            edad.Edad = reader.GetInt32(0);
-                            edad.Cantidad = reader.GetInt32(1);
+                           
+                            edad.Under18 = reader.GetInt32(0);
+                            edad.E18_24 = reader.GetInt32(1);
+                            edad.E25_34 = reader.GetInt32(2);
+                            edad.E35_44 = reader.GetInt32(3);
+                            edad.E45_54 = reader.GetInt32(4);
+                            edad.E55 = reader.GetInt32(5);
 
-                            reportEdades.Add(edad);
                         }
-                        return reportEdades;
+                        return edad;
                     }
                     else
                     {
-                        return reportEdades;
+                        return edad;
+                    }
+                }
+            }
+        }
+
+        public List<ReportVacunas> GetReportVacunas()
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                List<ReportVacunas> reportVacunas = new List<ReportVacunas>();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "ReporteVacunas";
+                    command.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            ReportVacunas vacuna = new ReportVacunas();
+                            vacuna.Vacuna = reader.GetString(0);
+                            vacuna.Cantidad = reader.GetInt32(1);
+
+                            reportVacunas.Add(vacuna);
+                        }
+                        return reportVacunas;
+                    }
+                    else
+                    {
+                        return reportVacunas;
                     }
                 }
             }

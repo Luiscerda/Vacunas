@@ -47,7 +47,7 @@ namespace Presentacion
         }
         private void btnRechazar_Click(object sender, EventArgs e)
         {
-            string mensaje = solicitudModel.UpdateEstadoSolicitud(txtCodigoSolicitud.Text, "Rechazada");
+            string mensaje = solicitudModel.UpdateEstadoSolicitud(txtCodigoSolicitud.Text, "Rechazada", txtCodigoVacuna.Text);
             MessageBox.Show(mensaje,"Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
@@ -57,7 +57,7 @@ namespace Presentacion
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            string mensaje = solicitudModel.UpdateEstadoSolicitud(txtCodigoSolicitud.Text, "Aceptada");
+            string mensaje = solicitudModel.UpdateEstadoSolicitud(txtCodigoSolicitud.Text, "Aceptada", txtCodigoVacuna.Text);
             MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }

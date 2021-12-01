@@ -69,28 +69,8 @@ namespace Presentacion.Vacunas
                 validacion.SetHighlightColor(txtDosis, DevComponents.DotNetBar.Validator.eHighlightColor.None);
             }
         }
-        private void txtClasificacion_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtClasificacion.Text))
-            {
-                validacion.SetHighlightColor(txtClasificacion, DevComponents.DotNetBar.Validator.eHighlightColor.Red);
-            }
-            else
-            {
-                validacion.SetHighlightColor(txtClasificacion, DevComponents.DotNetBar.Validator.eHighlightColor.None);
-            }
-        }
-        private void txtComposicion_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtComposicion.Text))
-            {
-                validacion.SetHighlightColor(txtComposicion, DevComponents.DotNetBar.Validator.eHighlightColor.Red);
-            }
-            else
-            {
-                validacion.SetHighlightColor(txtComposicion, DevComponents.DotNetBar.Validator.eHighlightColor.None);
-            }
-        }
+        
+        
         private void txtConservacion_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtConservacion.Text))
@@ -137,12 +117,12 @@ namespace Presentacion.Vacunas
             }
             if (string.IsNullOrEmpty(vacuna.Clasificacion))
             {
-                validacion.SetHighlightColor(txtClasificacion, DevComponents.DotNetBar.Validator.eHighlightColor.Red);
+                validacion.SetHighlightColor(cmbClasificacion, DevComponents.DotNetBar.Validator.eHighlightColor.Red);
                 return false;
             }
             if (string.IsNullOrEmpty(vacuna.Composicion))
             {
-                validacion.SetHighlightColor(txtComposicion, DevComponents.DotNetBar.Validator.eHighlightColor.Red);
+                validacion.SetHighlightColor(cmbComposicion, DevComponents.DotNetBar.Validator.eHighlightColor.Red);
                 return false;
             }
             if (string.IsNullOrEmpty(vacuna.Conservacion))
@@ -169,8 +149,8 @@ namespace Presentacion.Vacunas
             vacuna.Nombre = txtNombre.Text;
             vacuna.Laboratorio = txtLaboratorio.Text;
             vacuna.NumeroDosis = string.IsNullOrEmpty(txtDosis.Text) ? (int)0 : Convert.ToInt32(txtDosis.Text);
-            vacuna.Clasificacion = txtClasificacion.Text;
-            vacuna.Composicion = txtComposicion.Text;
+            vacuna.Clasificacion = cmbClasificacion.Text;
+            vacuna.Composicion = cmbComposicion.Text;
             vacuna.Conservacion = txtConservacion.Text + cmbGrados.Text;
             vacuna.FechaReg = DateTime.Now;
             vacuna.UserReg = UserLoginCache.IdUser;
@@ -210,6 +190,30 @@ namespace Presentacion.Vacunas
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void cmbClasificacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(cmbClasificacion.Text))
+            {
+                validacion.SetHighlightColor(cmbClasificacion, DevComponents.DotNetBar.Validator.eHighlightColor.Red);
+            }
+            else
+            {
+                validacion.SetHighlightColor(cmbClasificacion, DevComponents.DotNetBar.Validator.eHighlightColor.None);
+            }
+        }
+
+        private void cmbComposicion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(cmbComposicion.Text))
+            {
+                validacion.SetHighlightColor(cmbComposicion, DevComponents.DotNetBar.Validator.eHighlightColor.Red);
+            }
+            else
+            {
+                validacion.SetHighlightColor(cmbComposicion, DevComponents.DotNetBar.Validator.eHighlightColor.None);
             }
         }
     }

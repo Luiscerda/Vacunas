@@ -42,14 +42,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtDosis = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtClasificacion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtComposicion = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtConservacion = new System.Windows.Forms.TextBox();
             this.btnSaveVacuna = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.cmbGrados = new System.Windows.Forms.ComboBox();
+            this.cmbClasificacion = new System.Windows.Forms.ComboBox();
+            this.cmbComposicion = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -201,16 +201,6 @@
             this.label6.TabIndex = 46;
             this.label6.Text = "Clasificacion:";
             // 
-            // txtClasificacion
-            // 
-            this.txtClasificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClasificacion.Location = new System.Drawing.Point(165, 250);
-            this.txtClasificacion.MaxLength = 40;
-            this.txtClasificacion.Name = "txtClasificacion";
-            this.txtClasificacion.Size = new System.Drawing.Size(197, 21);
-            this.txtClasificacion.TabIndex = 45;
-            this.txtClasificacion.TextChanged += new System.EventHandler(this.txtClasificacion_TextChanged);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -221,16 +211,6 @@
             this.label7.Size = new System.Drawing.Size(92, 16);
             this.label7.TabIndex = 48;
             this.label7.Text = "Composicion:";
-            // 
-            // txtComposicion
-            // 
-            this.txtComposicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtComposicion.Location = new System.Drawing.Point(394, 250);
-            this.txtComposicion.MaxLength = 40;
-            this.txtComposicion.Name = "txtComposicion";
-            this.txtComposicion.Size = new System.Drawing.Size(197, 21);
-            this.txtComposicion.TabIndex = 47;
-            this.txtComposicion.TextChanged += new System.EventHandler(this.txtComposicion_TextChanged);
             // 
             // label8
             // 
@@ -299,20 +279,50 @@
             this.cmbGrados.TabIndex = 53;
             this.cmbGrados.SelectedIndexChanged += new System.EventHandler(this.cmbGrados_SelectedIndexChanged);
             // 
+            // cmbClasificacion
+            // 
+            this.cmbClasificacion.FormattingEnabled = true;
+            this.cmbClasificacion.Items.AddRange(new object[] {
+            "Atenuadas",
+            "Inactivas",
+            "Toxoides",
+            "Subunitarias / Conjugadas",
+            "Material genetico"});
+            this.cmbClasificacion.Location = new System.Drawing.Point(165, 252);
+            this.cmbClasificacion.Name = "cmbClasificacion";
+            this.cmbClasificacion.Size = new System.Drawing.Size(197, 21);
+            this.cmbClasificacion.TabIndex = 54;
+            this.cmbClasificacion.SelectedIndexChanged += new System.EventHandler(this.cmbClasificacion_SelectedIndexChanged);
+            // 
+            // cmbComposicion
+            // 
+            this.cmbComposicion.FormattingEnabled = true;
+            this.cmbComposicion.Items.AddRange(new object[] {
+            "Conservante",
+            "Antibiotico",
+            "Estabilizador",
+            "Antigeno",
+            "Adyuvante"});
+            this.cmbComposicion.Location = new System.Drawing.Point(394, 252);
+            this.cmbComposicion.Name = "cmbComposicion";
+            this.cmbComposicion.Size = new System.Drawing.Size(197, 21);
+            this.cmbComposicion.TabIndex = 55;
+            this.cmbComposicion.SelectedIndexChanged += new System.EventHandler(this.cmbComposicion_SelectedIndexChanged);
+            // 
             // FrmAddVacunas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(747, 409);
+            this.Controls.Add(this.cmbComposicion);
+            this.Controls.Add(this.cmbClasificacion);
             this.Controls.Add(this.cmbGrados);
             this.Controls.Add(this.btnSaveVacuna);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtConservacion);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtComposicion);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtClasificacion);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtDosis);
             this.Controls.Add(this.label3);
@@ -349,13 +359,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtDosis;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtClasificacion;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtComposicion;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtConservacion;
         private System.Windows.Forms.Button btnSaveVacuna;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cmbGrados;
+        private System.Windows.Forms.ComboBox cmbClasificacion;
+        private System.Windows.Forms.ComboBox cmbComposicion;
     }
 }

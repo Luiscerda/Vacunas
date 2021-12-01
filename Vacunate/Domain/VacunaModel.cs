@@ -41,5 +41,10 @@ namespace Domain
         {
             return vacunaDao.GetVacunas();
         }
+        public string UpdateAceptarVacunas(string codigo)
+        {
+             vacunaDao.UpdateAceptarVacunas(codigo);
+            return "Vacuna aceptada con exito";
+        }
     }
 }

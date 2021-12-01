@@ -38,7 +38,6 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnSolicitudes = new System.Windows.Forms.Button();
             this.btnVacunas = new System.Windows.Forms.Button();
-            this.btnEmpleados = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.circularPictureBox1 = new Presentacion.Controles.CircularPictureBox();
             this.labelEmail = new System.Windows.Forms.Label();
@@ -118,7 +117,6 @@
             this.panelMenu.Controls.Add(this.btnLogout);
             this.panelMenu.Controls.Add(this.btnSolicitudes);
             this.panelMenu.Controls.Add(this.btnVacunas);
-            this.panelMenu.Controls.Add(this.btnEmpleados);
             this.panelMenu.Controls.Add(this.linkLabel1);
             this.panelMenu.Controls.Add(this.circularPictureBox1);
             this.panelMenu.Controls.Add(this.labelEmail);
@@ -140,12 +138,12 @@
             this.btnGraficas.FlatAppearance.BorderSize = 0;
             this.btnGraficas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGraficas.ForeColor = System.Drawing.Color.Silver;
-            this.btnGraficas.Location = new System.Drawing.Point(0, 368);
+            this.btnGraficas.Location = new System.Drawing.Point(0, 323);
             this.btnGraficas.Name = "btnGraficas";
             this.btnGraficas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnGraficas.Size = new System.Drawing.Size(250, 45);
             this.btnGraficas.TabIndex = 9;
-            this.btnGraficas.Text = "Graficas";
+            this.btnGraficas.Text = "Reporte";
             this.btnGraficas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGraficas.UseVisualStyleBackColor = true;
             this.btnGraficas.Click += new System.EventHandler(this.btnGraficas_Click);
@@ -174,7 +172,7 @@
             this.btnSolicitudes.FlatAppearance.BorderSize = 0;
             this.btnSolicitudes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSolicitudes.ForeColor = System.Drawing.Color.Silver;
-            this.btnSolicitudes.Location = new System.Drawing.Point(0, 323);
+            this.btnSolicitudes.Location = new System.Drawing.Point(0, 278);
             this.btnSolicitudes.Name = "btnSolicitudes";
             this.btnSolicitudes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnSolicitudes.Size = new System.Drawing.Size(250, 45);
@@ -190,7 +188,7 @@
             this.btnVacunas.FlatAppearance.BorderSize = 0;
             this.btnVacunas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVacunas.ForeColor = System.Drawing.Color.Silver;
-            this.btnVacunas.Location = new System.Drawing.Point(0, 278);
+            this.btnVacunas.Location = new System.Drawing.Point(0, 233);
             this.btnVacunas.Name = "btnVacunas";
             this.btnVacunas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnVacunas.Size = new System.Drawing.Size(250, 45);
@@ -199,22 +197,6 @@
             this.btnVacunas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVacunas.UseVisualStyleBackColor = true;
             this.btnVacunas.Click += new System.EventHandler(this.btnVacunas_Click);
-            // 
-            // btnEmpleados
-            // 
-            this.btnEmpleados.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEmpleados.FlatAppearance.BorderSize = 0;
-            this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmpleados.ForeColor = System.Drawing.Color.Silver;
-            this.btnEmpleados.Location = new System.Drawing.Point(0, 233);
-            this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnEmpleados.Size = new System.Drawing.Size(250, 45);
-            this.btnEmpleados.TabIndex = 5;
-            this.btnEmpleados.Text = "Empleados";
-            this.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpleados.UseVisualStyleBackColor = true;
-            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
             // 
             // linkLabel1
             // 
@@ -432,7 +414,6 @@
         private System.Windows.Forms.Label labelRol;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private Controles.CircularPictureBox circularPictureBox1;
-        private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.Button btnVacunas;
         private System.Windows.Forms.Panel panelFormularios;
         private System.Windows.Forms.Label label1;

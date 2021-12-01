@@ -128,7 +128,7 @@ namespace DataAccess
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "Select * from Vacunas";
+                    command.CommandText = "Select * from Vacunas where Activa  = 1";
                     command.CommandType = CommandType.Text;
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.HasRows)
@@ -145,6 +145,26 @@ namespace DataAccess
                     {
                         return vacunas;
                     }
+                }
+            }
+        }
+        public void UpdateAceptarVacunas(string codigo)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    var vacuna = GetVacunaByCodigo2(codigo.Trim());
+                    var cantidadExistentes = vacuna.Stock;
+                    var idVacuna = vacuna.IdVacuna;
+                    var cantidadNueva = cantidadExistentes - 1;
+                    command.Connection = connection;
+                    command.CommandText = "Update  Vacunas set Stock = @cantidadNueva where IdVacunas=@idVacuna";
+                    command.Parameters.AddWithValue("@idVacuna", idVacuna);
+                    command.Parameters.AddWithValue("@cantidadNueva", cantidadNueva);
+                    command.CommandType = CommandType.Text;
+                    command.ExecuteNonQuery();
                 }
             }
         }

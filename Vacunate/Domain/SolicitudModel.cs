@@ -11,9 +11,11 @@ namespace Domain
     public class SolicitudModel
     {
         SolicitudDao solicitudDao;
+        VacunaDao vacunaDao;
         public SolicitudModel()
         {
             solicitudDao = new SolicitudDao();
+            vacunaDao = new VacunaDao();
         }
         public string SaveSolicitud(Solicitud solicitud)
         {
@@ -48,7 +50,7 @@ namespace Domain
         {
             return solicitudDao.GetSolicitudByCodigo(codigo);
         }
-        public string UpdateEstadoSolicitud(string codigo, string estado)
+        public string UpdateEstadoSolicitud(string codigo, string estado, string codigoVacuna)
         {
             try
             {
@@ -59,6 +61,7 @@ namespace Domain
                 }
                 else
                 {
+                    vacunaDao.UpdateAceptarVacunas(codigoVacuna.Trim());
                     return "Solicitud aprobada";
                 }
                 
